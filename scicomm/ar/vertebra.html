@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D Model Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- Include stylesheets from your landing page -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link rel="stylesheet" href="../css/queries.css" type="text/css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #b6b2a4; /* Replace this with your desired background color */
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .model-viewer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #b6b2a4; /* Match this to your site's background color */
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      model-viewer {
+        width: 80%;
+        height: 500px;
+        border: 1px solid #ddd;
+      }
+      .heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333; /* Match this to your heading color */
+      }
+    </style>
+</head>
+<body>
+    <section class="model-viewer-container">
+        <h1 class="heading">Katis Wirbelkörper</h1>
+        <!-- Embed your 3D model viewer here -->
+        <model-viewer 
+            src="verte.glb" 
+            alt="3D vertebra" 
+            ar
+            camera-controls 
+            auto-rotate 
+            camera-orbit="90deg 165deg 10m"
+            interaction-prompt="none"
+            shadow-intensity="1"
+            scale="0.01 0.01 0.01"> 
+        </model-viewer>
+    </section>
+    <!-- Include necessary scripts from your site -->
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
