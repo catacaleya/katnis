@@ -47,10 +47,43 @@
           </div>
           <div class="row">
             <div class="col-md-12 text-left">
-              <h1 class="animated fadeInUpDelay">Hi, I'm Kati. <br> PhD student with the strong conviction that there is much more to understand about the human body.
-                Researching human biomechanics using fancy coupling methods of MBS and FEM makes up the largest part of my daily work. Nature is engineering in perfection. I lose track of time when programming automation algorithms for medical image processing. Sport is health, and remains healthy when motion is understood. New ideas come naturally to me and I look at them with naïve optimism. I'd rather invest in connection than content - kindness is key. </h1>
-              <!p class=""</p>
+              <h1 class="animated fadeInUpDelay">
+                <span id="intro-text"></span>
+                <br>
+                <span class="small-text">
+                  PhD student with the strong conviction that there is much more to understand about the human body.
+                  Researching human biomechanics using fancy coupling methods of MBS and FEM makes up the largest part of my daily work.
+                  Nature is engineering in perfection. I lose track of time when programming automation algorithms for medical image processing.
+                  Sport is health, and remains healthy when motion is understood. New ideas come naturally to me and I look at them with naïve optimism.
+                  I'd rather invest in connection than content - kindness is key.
+                </span>
+              </h1>
             </div>
+            
+            <style>
+              .small-text {
+                font-size: 0.8rem;
+                line-height: 1.5;
+              }
+            </style>
+            
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const text = "Hi, I'm Kati.";
+                const speed = 100;
+                let i = 0;
+            
+                function typeWriter() {
+                  if (i < text.length) {
+                    document.getElementById("intro-text").textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                  }
+                }
+            
+                typeWriter();
+              });
+            </script>
           </div>
         </div>
       </section>
