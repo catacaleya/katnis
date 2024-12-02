@@ -28,10 +28,10 @@
             <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
               <nav class="pull">
                 <ul class="top-nav">
-                  <li><a href="#getstarted">Get Started <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li><a href="#media">Media <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li class="nav-last"><a href="#design">Design <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li><a href="#getstarted">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li><a href="#media">About Me <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li><a href="#features">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li class="nav-last"><a href="#design">References <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                 </ul>
               </nav>
             </div>
@@ -47,43 +47,9 @@
           </div>
           <div class="row">
             <div class="col-md-12 text-left">
-              <h1 class="animated fadeInUpDelay">
-                <span id="intro-text"></span>
-                <br>
-                <span class="small-text">
-                  PhD student with the strong conviction that there is much more to understand about the human body.
-                  Researching human biomechanics using fancy coupling methods of MBS and FEM makes up the largest part of my daily work.
-                  Nature is engineering in perfection. I lose track of time when programming automation algorithms for medical image processing.
-                  Sport is health, and remains healthy when motion is understood. New ideas come naturally to me and I look at them with naïve optimism.
-                  I'd rather invest in connection than content - kindness is key.
-                </span>
+              <h1 class="typewriter" data-text="Individual Biomechanical Models from Medical Images"></h1>
               </h1>
             </div>
-            
-            <style>
-              .small-text {
-                font-size: 0.8rem;
-                line-height: 1.5;
-              }
-            </style>
-            
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                const text = "Hi, I'm Kati.";
-                const speed = 100;
-                let i = 0;
-            
-                function typeWriter() {
-                  if (i < text.length) {
-                    document.getElementById("intro-text").textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                  }
-                }
-            
-                typeWriter();
-              });
-            </script>
           </div>
         </div>
       </section>
@@ -91,12 +57,16 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 wp1">
-              <h1>
-              See the sky even better than your own eyes can
-              </h1>
-              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Auae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-              <a href="#" class="download-btn">Download Now</a>
+              <h1 class="typewriter" data-text="Hi, I'm Kati."></h1>
+              <div class="animated fadeInUpDelay">
+                <p>PhD student with the strong conviction that there is much more to understand about the human body.
+                  Researching human biomechanics using fancy coupling methods of MBS and FEM makes up the largest part of my daily work.
+                  Nature is engineering in perfection. I lose track of time when programming automation algorithms for medical image processing. </p>
+                <p>Sport is health, and remains healthy when motion is understood. New ideas come naturally to me and I look at them with naïve optimism.
+                  I'd rather invest in connection than content - kindness is key.</p>
+                <p> I'm here to help. </p>
+              </div>
+              <!--v<a href="#" class="download-btn">Download Now</a> -->
             </div>
           </div>
         </div>
@@ -106,11 +76,11 @@
           <div class="row">
             <div class="col-md-8 wp1 col-md-offset-6">
               <h1>
-              See mooooore sky
+              What I do
               </h1>
               <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>Auae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-              <a href="#" class="download-btn">Download Now 2</a>
+              <!-- <a href="#" class="download-btn">Download Now 2</a> -->
             </div>
           </div>
         </div>
@@ -255,5 +225,24 @@
       <script src="js/jquery.smooth-scroll.js"></script>
       <script src="js/modernizr.js"></script>
       <script src="js/waypoints.min.js"></script>
+        <!-- Typewriter Script -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const typewriters = document.querySelectorAll(".typewriter");
+          const speed = 50;
+          typewriters.forEach((el) => {
+            const text = el.getAttribute("data-text");
+            let i = 0;
+            function typeWriter() {
+              if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+              }
+            }
+            typeWriter();
+          });
+        });
+      </script>
     </body>
   </html>
