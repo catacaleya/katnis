@@ -271,37 +271,38 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     overflow: hidden;
     border-radius: 10px; /* Optional: Add rounded corners */
     text-align: center; /* Center the text below the image */
-    height: 350px; /* Optional: Set a fixed height to limit the size of the box */
-  }
-  
-  .flat-box img {
+    height: auto; /* Allow height to adjust based on the content */
+}
+
+.flat-box img {
     width: 100%; /* Make the image fill the box horizontally */
-    height: 200px; /* Optional: Set a fixed height for the image */
+    height: 100%; /* Make the image fill the box vertically */
     object-fit: cover; /* Ensures image covers the box without distortion */
     transition: transform 0.3s ease-in-out;
     display: block; /* Remove any inline spacing issues */
-  }
-  
-  .flat-box:hover img {
+}
+
+.flat-box:hover img {
     transform: scale(1.1); /* Zoom-in effect on hover */
-  }
-  
-  .flat-box .text-content {
+}
+
+.flat-box .text-content {
     padding: 15px; /* Space around the text */
     background-color: #d1d9d2; /* Same color as the original box background */
-  }
-  
-  .flat-box .title {
+}
+
+.flat-box .title {
     font-size: 1.5rem;
     color: #253326;
     margin-bottom: 10px;
-  }
-  
-  .flat-box .feature-text {
+}
+
+.flat-box .feature-text {
     font-size: 1rem;
     color: #253326;
     margin-bottom: 5px; /* Space between bullet points */
-  }
+}
+
 .colourway { height: 346px; }
 .colour1 { background-color: #0d0d0d; }
 .colour2 { background-color: #b6b2a4; }
