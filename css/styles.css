@@ -258,8 +258,50 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .try-btn { background-color: #0d0d0d; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; color: #d1d9d2; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; display: inline-block; padding: 15px 50px; margin: 70px 0 70px; }
 .try-btn:hover, .try-btn:focus { background-color: #253326; color: #d1d9d2; text-decoration: none; }
 .design { padding: 100px 0; background-color: #253326; position: relative; }
-.flat-box { background-color: #d1d9d2; -webkit-box-shadow: 0px 3px 0px 0px rgba(209, 217, 210, 1); -moz-box-shadow: 0px 3px 0px 0px rgba(209, 217, 210, 1); box-shadow: 0px 3px 0px 0px rgba(209, 217, 210, 1); transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; }
-.flat-box:hover, .flat-box:focus { transform: translate(0, -15px); -webkit-transform: translate(0, -15px); -o-transform: translate(0, -15px); -moz-transform: translate(0, -15px); }
+.flat-box {
+    background-color: #d1d9d2; /* Fallback in case image fails to load */
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(209, 217, 210, 1);
+    -moz-box-shadow: 0px 3px 0px 0px rgba(209, 217, 210, 1);
+    box-shadow: 0px 3px 0px 0px rgba(209, 217, 210, 1);
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    text-align: center; /* Center the text below the image */
+    height: 350px; /* Optional: Set a fixed height to limit the size of the box */
+  }
+  
+  .flat-box img {
+    width: 100%; /* Make the image fill the box horizontally */
+    height: 200px; /* Optional: Set a fixed height for the image */
+    object-fit: cover; /* Ensures image covers the box without distortion */
+    transition: transform 0.3s ease-in-out;
+    display: block; /* Remove any inline spacing issues */
+  }
+  
+  .flat-box:hover img {
+    transform: scale(1.1); /* Zoom-in effect on hover */
+  }
+  
+  .flat-box .text-content {
+    padding: 15px; /* Space around the text */
+    background-color: #d1d9d2; /* Same color as the original box background */
+  }
+  
+  .flat-box .title {
+    font-size: 1.5rem;
+    color: #253326;
+    margin-bottom: 10px;
+  }
+  
+  .flat-box .feature-text {
+    font-size: 1rem;
+    color: #253326;
+    margin-bottom: 5px; /* Space between bullet points */
+  }
 .colourway { height: 346px; }
 .colour1 { background-color: #0d0d0d; }
 .colour2 { background-color: #b6b2a4; }
