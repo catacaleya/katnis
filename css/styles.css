@@ -249,6 +249,8 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .download-now_2 p { color: #253326; font-size: 16px; margin: 40px 30px 40px 0; line-height: 30px; }
 .download-btn { border: solid 3px #d1d9d2; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 70px; display: inline-block; color: #d1d9d2; margin-bottom: 185px; }
 .download-btn:hover, .download-btn:focus { text-decoration: none; border-color: #253326; color: #253326; }
+.talks-btn { border: solid 3px #b6b2a4; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 70px; display: inline-block; color: #b6b2a4; margin-bottom: 185px; }
+.talks-btn:hover, .download-btn:focus { text-decoration: none; border-color: #253326; color: #253326; }
 .testimonials { background: #0d0d0d url('../img/spine_drawing.jpg') no-repeat left center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 130px 0; }
 .features { background: #d1d9d2 url('../img/arrowBG.png') no-repeat center -1px; padding: 70px 0; }
 .features p { color: #0d0d0d; font-size: 16px; word-spacing: 2px; line-height: 30px; }
@@ -278,13 +280,16 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     width: 100%; /* Make the image fill the box horizontally */
     height: 100%; /* Make the image fill the box vertically */
     object-fit: cover; /* Ensures image covers the box without distortion */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add transition for filter */
     display: block; /* Remove any inline spacing issues */
+    filter: grayscale(90%); /* Make the image black-and-white initially */
 }
 
 .flat-box:hover img {
     transform: scale(1.1); /* Zoom-in effect on hover */
+    filter: grayscale(0%); /* Remove grayscale (turn the image colorful) on hover */
 }
+
 
 .flat-box .text-content {
     padding: 15px; /* Space around the text */
