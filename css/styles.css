@@ -239,6 +239,49 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .hero-play-btn:hover, .hero-play-btn:focus { transform: translate(0, -15px); -webkit-transform: translate(0, -15px); -o-transform: translate(0, -15px); -moz-transform: translate(0, -15px); }
 .get-started-btn { background-color: #0d0d0d; padding: 20px 80px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 22px; letter-spacing: 2px; box-shadow: inset 0px 1px 0px rgba(209, 217, 210, 0.4); transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; display: inline-block; }
 .get-started-btn:hover, .get-started-btn:focus { text-decoration: none; background-color: #b6b2a4; }
+/* General container for the scroll indicators */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px; /* Position near the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style for both arrows */
+  .arrow {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #333;
+    margin: 5px 0;
+    animation: scrollArrow 2s ease-in-out infinite;
+  }
+  
+  /* Adjust animation delay for a "staggered effect" */
+  .arrow1 {
+    animation-delay: 0s;
+  }
+  
+  .arrow2 {
+    animation-delay: 0.3s;
+  }
+  
+  /* Animation keyframes */
+  @keyframes scrollArrow {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }  
 .download-now { background: #b6b2a4 url('../img/ImKati.jpg') no-repeat right 0px; 
     background-size: 30%; 
     height: 70vh;}
