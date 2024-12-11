@@ -239,10 +239,18 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .hero-play-btn:hover, .hero-play-btn:focus { transform: translate(0, -15px); -webkit-transform: translate(0, -15px); -o-transform: translate(0, -15px); -moz-transform: translate(0, -15px); }
 .get-started-btn { background-color: #0d0d0d; padding: 20px 80px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 22px; letter-spacing: 2px; box-shadow: inset 0px 1px 0px rgba(209, 217, 210, 0.4); transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; display: inline-block; }
 .get-started-btn:hover, .get-started-btn:focus { text-decoration: none; background-color: #b6b2a4; }
+.logo {
+    position: absolute; /* Allow precise placement */
+    top: 20px; /* Space from the top edge */
+    right: 20px; /* Space from the right edge */
+    width: 100px; /* Adjust logo size as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 100; /* Ensure it appears above other elements */
+  }
 /* General container for the scroll indicators */
 .scroll-indicator {
     position: absolute;
-    bottom: 20px; /* Position near the bottom */
+    bottom: 20px; /* Keeps the arrows near the bottom */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -250,37 +258,36 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     align-items: center;
   }
   
-  /* Style for both arrows */
-  .arrow {
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 12px solid #333;
-    margin: 5px 0;
-    animation: scrollArrow 2s ease-in-out infinite;
+  .scroll-indicator .arrow {
+    width: 50px; /* Increased size for larger arrows */
+    height: 50px; /* Maintain a square aspect ratio */
+    border: solid #b6b2a4; /* Updated color */
+    border-width: 0 6px 6px 0; /* Adjust thickness for visibility */
+    display: inline-block;
+    padding: 10px; /* Larger padding to enhance size */
+    transform: rotate(45deg);
+    animation: bounce 1.5s infinite ease-in-out;
   }
   
-  /* Adjust animation delay for a "staggered effect" */
-  .arrow1 {
-    animation-delay: 0s;
+  .scroll-indicator .arrow:nth-child(2) {
+    margin-top: -10px; /* Adjust spacing between arrows */
+    animation-delay: 0.2s; /* Slight delay for staggered effect */
   }
   
-  .arrow2 {
-    animation-delay: 0.3s;
+  .scroll-indicator .arrow:nth-child(3) {
+    animation-delay: 0.4s; /* Further delay for smooth sequence */
   }
   
-  /* Animation keyframes */
-  @keyframes scrollArrow {
-    0% {
-      transform: translateY(0);
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) rotate(45deg);
     }
-    50% {
-      transform: translateY(10px);
+    40% {
+      transform: translateY(-10px) rotate(45deg);
     }
-    100% {
-      transform: translateY(0);
-    }
+    60% {
+      transform: translateY(-5px) rotate(45deg);
+    }  
   }  
 .download-now { background: #b6b2a4 url('../img/ImKati.jpg') no-repeat right 0px; 
     background-size: 30%; 
@@ -333,9 +340,8 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     filter: grayscale(0%); /* Remove grayscale (turn the image colorful) on hover */
 }
 
-
 .flat-box .text-content {
-    padding: 15px; /* Space around the text */
+    padding: 5px; /* Space around the text */
     background-color: #d1d9d2; /* Same color as the original box background */
 }
 
