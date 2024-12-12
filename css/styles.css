@@ -311,7 +311,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .download-now_2 p { color: #253326; font-size: 16px; margin: 40px 30px 40px 0; line-height: 30px; }
 .aboutme-btn { border: solid 3px #d1d9d2; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 10px; display: inline-block; color: #d1d9d2; margin-bottom: 185px; }
 .aboutme-btn:hover, .aboutme-btn:focus { text-decoration: none; border-color: #253326; color: #253326; }
-.talks-btn { border: solid 3px #253326; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 15px; display: inline-block; color: #253326; margin-bottom: 185px; }
+.talks-btn { border: solid 3px #253326; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 15px; display: inline-block; color: #253326; margin-bottom: 15px; }
 .talks-btn:hover, .aboutme-btn:focus { text-decoration: none; border-color: #b6b2a4; color: #b6b2a4; }
 .testimonials { background: #0d0d0d url('../img/spine_drawing.jpg') no-repeat left center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 130px 0; }
 .features { background: #d1d9d2 url('../img/arrowBG.png') no-repeat center -1px; padding: 70px 0; }
@@ -335,7 +335,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     overflow: hidden;
     border-radius: 10px; /* rounded corners */
     text-align: center;
-    height: 90%; }
+    height: 85vh; }
 .flat-box img {
     width: 100%; /* Make the image fill the box horizontally */
     height: 100%; /* and vertically */
