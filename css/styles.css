@@ -338,8 +338,8 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     height: 85vh; }
 .flat-box img {
     width: 100%; /* Make the image fill the box horizontally */
-    height: 100%; /* and vertically */
-    object-fit: cover; /* Ensures image covers the box without distortion */
+    height: auto; /* and vertically */
+    object-fit: none; /* Ensures image covers the box without distortion */
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add transition for filter */
     display: block; /* Remove any inline spacing issues */
     filter: grayscale(90%); /* Make the image black-and-white initially */}
