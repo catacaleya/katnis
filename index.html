@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kati Nispel</title>
+    <link rel="icon" href="../img/favicon.ico">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -61,11 +62,12 @@
           <div class="arrow arrow1"></div>
           <div class="arrow arrow2"></div>
         </div>
-        <div id="cookieConsentBanner" class="cookie-banner">
+        <div id="cookieConsentBanner" class="cookie-banner col-md-4 col-md-offset-6">
           <p>
-            🍪 We value your privacy! We use cookies for better experience. 
-            <button id="acceptCookies">Accept All</button>
-            <button id="rejectCookies">Reject</button>
+            🍪 Cookies are my way of saying: 'I see you, <br>
+            I know you, I respect your snack choices.' <br>
+            <button id="acceptCookies">I'm fine with that</button> 
+            <button id="rejectCookies">Staying private</button>
           </p>
         </div>
       </section>
@@ -80,12 +82,12 @@
                 <p>I'm a PhD candidate with the strong conviction that there is much more to understand about the human body.
                   Researching human biomechanics using automated modeling and simulation methods makes me lose track of time. </p>
                 <p>Sport is health, and remains healthy when motion is understood. New ideas come naturally to me and I look at them with naïve optimism.
-                  I'd rather invest in connection than content - Write me a mail if you think I could help <br> hello@katnis.de</p>
-                
+                  I'd rather invest in connection than content - Write me a mail if you think I could help </p>
               </div>
+
               <a href="mailto:hello@katnis.de" class="aboutme-btn">Write a Mail</a>
 
-              <div class ="animated fadeInUpDelay-2 feature-text" > hello@katnis.de </div>
+              <div class ="animated fadeInUpDelay-2 feature-text" >✉ hello@katnis.de </div>
             </div>
           </div>
         </div>
@@ -254,7 +256,7 @@
 
           <div class="row">
             <div class="col-md-12">
-              <h1>Get the latest Updates</h1>
+              <h1 class="typewriter" data-text="Get the latest Updates"></h1>
             </div>
           </div>
 
@@ -293,6 +295,7 @@
         </div>
 
         <!-- Modals / Pop-Ups -->
+        <div class="modal-overlay"></div>
         <div id="impressumModal" class="modal">
           <div class="modal-content">
             <span onclick="closeModal()" class="close">&times;</span>
@@ -481,16 +484,55 @@
       });
       </script>
       <script> // open and close modals / pop-ups
-        function openModal(modalId) {
-          document.getElementById(modalId).style.display = "block";}
-        function closeModal(modalId) {document.getElementById(modalId).style.display = "none";}
-        // Close modals when clicking outside of them
-        window.onclick = function(event) {
-          const modals = document.querySelectorAll('.modal');
-          modals.forEach(modal => {
-            if (event.target === modal) {
-              modal.style.display = "none";}
-            });}
+        let scrollPosition = 0;
+
+        // Function to open modal
+        function openModal() {
+            const modalOverlay = document.querySelector('.modal-overlay');
+            const modal = document.querySelector('.modal-content');
+
+            // Save the scroll position
+            scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Show the modal and overlay
+            modal.style.display = "block";
+            modalOverlay.style.display = "block";
+
+            // Disable scrolling in the background
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.style.position = 'fixed';
+        }
+
+        // Function to close modal
+        function closeModal() {
+            const modalOverlay = document.querySelector('.modal-overlay');
+            const modal = document.querySelector('.modal-content');
+
+            // Hide modal and overlay
+            modal.style.display = "none";
+            modalOverlay.style.display = "none";
+
+            // Re-enable scrolling
+            document.body.style.position = '';
+            document.body.style.top = '';
+
+            // Restore scroll position
+            window.scrollTo(0, scrollPosition);
+        }
+
+        // Attach event listeners
+        document.addEventListener("DOMContentLoaded", () => {
+            const openButton = document.querySelector('#openModal');
+            const closeButton = document.querySelector('.close');
+
+            openButton.addEventListener('click', openModal);
+            closeButton.addEventListener('click', closeModal);
+
+            // Also allow clicking on the overlay to close the modal
+            const modalOverlay = document.querySelector('.modal-overlay');
+            modalOverlay.addEventListener('click', closeModal);
+        });
+
       </script>
       <script> // Cookie Consent
         document.addEventListener('DOMContentLoaded', function() {

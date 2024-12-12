@@ -184,7 +184,7 @@ Headings
 .about-me h1 { font-size: 45px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
 .portfolio h1 { font-size: 45px; font-weight: 100; color: #d1d9d2; margin: 30px 0 30px 0; }
 .testimonials h1 { color: #d1d9d2; font-size: 43px; font-weight: 100; margin: 20px 0 80px 0; font-style: italic; }
-.updates h1 { color: #253326; font-size: 15px; margin: 20px 0 20px 0; text-transform: uppercase; }
+.updates h1 { color: #253326; font-size: 15px; margin: 50px 0 50px 0; text-transform: uppercase; }
 .modal-content h1 { font-size: 45px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
 .modal-content h2 { color: #253326; font-size: 15px; margin: 20px 0 20px 0; text-transform: uppercase; }
 
@@ -231,6 +231,36 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     -webkit-transition: all 1s ease; 
     -o-transition: all 1s ease; }
 .hero-play-btn:hover, .hero-play-btn:focus { transform: translate(0, -15px); -webkit-transform: translate(0, -15px); -o-transform: translate(0, -15px); -moz-transform: translate(0, -15px); }
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* 30% transparent white */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    font-size: 14px;
+    /*display: none; /* Hidden until consent logic runs */
+    max-width: 300px;
+}
+  .cookie-banner p {
+    margin: 0;
+    padding: 5px 0;}
+  .cookie-banner button {
+    margin: 5px 2px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;}
+  #acceptCookies {
+    background-color: #4CAF50;
+    color: white;}
+  #rejectCookies {
+    background-color: #e74c3c;
+    color: white;}
 .get-started-btn { background-color: #0d0d0d; padding: 20px 80px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 22px; letter-spacing: 2px; box-shadow: inset 0px 1px 0px rgba(209, 217, 210, 0.4); transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; display: inline-block; }
 .get-started-btn:hover, .get-started-btn:focus { text-decoration: none; background-color: #b6b2a4; }
 .logo {
@@ -279,9 +309,9 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     background-size: 40%; 
     height: 70vh;}
 .download-now_2 p { color: #253326; font-size: 16px; margin: 40px 30px 40px 0; line-height: 30px; }
-.aboutme-btn { border: solid 3px #d1d9d2; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 70px; display: inline-block; color: #d1d9d2; margin-bottom: 185px; }
+.aboutme-btn { border: solid 3px #d1d9d2; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 10px; display: inline-block; color: #d1d9d2; margin-bottom: 185px; }
 .aboutme-btn:hover, .aboutme-btn:focus { text-decoration: none; border-color: #253326; color: #253326; }
-.talks-btn { border: solid 3px #253326; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 70px; display: inline-block; color: #253326; margin-bottom: 185px; }
+.talks-btn { border: solid 3px #253326; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; letter-spacing: 2px; transition: all 0.5s ease; padding: 15px 15px; display: inline-block; color: #253326; margin-bottom: 185px; }
 .talks-btn:hover, .aboutme-btn:focus { text-decoration: none; border-color: #b6b2a4; color: #b6b2a4; }
 .testimonials { background: #0d0d0d url('../img/spine_drawing.jpg') no-repeat left center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 130px 0; }
 .features { background: #d1d9d2 url('../img/arrowBG.png') no-repeat center -1px; padding: 70px 0; }
@@ -317,7 +347,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     transform: scale(1.1); /* Zoom-in effect on hover */
     filter: grayscale(0%); /* Remove grayscale (turn the image colorful) on hover */}
 .flat-box .text-content {
-    padding: 1px; /* Space around the text */
+    padding: 5px; /* Space around the text */
     background-color: #d1d9d2; /* Same color as the original box background */}
 .flat-box .title {
     font-size: 1.5rem;
