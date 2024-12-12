@@ -23,9 +23,9 @@ Base
 * 2. Prevents iOS text size adjust after orientation change, without disabling
 *    user zoom. */
  
-html { font-size: 100%; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
--ms-text-size-adjust: 100%; /* 2 */ }
+html { font-size: 85%; /* 1 */
+    -webkit-text-size-adjust: 85%; /* 2 */
+-ms-text-size-adjust: 85%; /* 2 */ }
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
 html, button, input, select, textarea { font-family: 'Lato', sans-serif; }
@@ -180,12 +180,13 @@ Clearfix
 Headings
 ========================================================================== */
 
-.hero h1 { font-size: 70px; font-weight: 500; color: #d1d9d2; letter-spacing: -1px; margin: 100px 0 20px 0; }
-.about-me h1 { font-size: 55px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
-.portfolio h1 { font-size: 55px; font-weight: 100; color: #d1d9d2; margin: 50px 0 20px 0; }
+.hero h1 { font-size: 70px; font-weight: 500; color: #d1d9d2; letter-spacing: -1px; margin: 110px 0 20px 0; }
+.about-me h1 { font-size: 45px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
+.portfolio h1 { font-size: 45px; font-weight: 100; color: #d1d9d2; margin: 30px 0 30px 0; }
 .testimonials h1 { color: #d1d9d2; font-size: 43px; font-weight: 100; margin: 20px 0 80px 0; font-style: italic; }
-.updates h1 { color: ##253326; font-size: 15px; margin: 0 0 20px 0; text-transform: uppercase; }
-.design h1 { color: #b6b2a4; font-size: 38px; font-weight: 300; margin-top: 0; }
+.updates h1 { color: #253326; font-size: 15px; margin: 20px 0 20px 0; text-transform: uppercase; }
+.modal-content h1 { font-size: 45px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
+.modal-content h2 { color: #253326; font-size: 15px; margin: 20px 0 20px 0; text-transform: uppercase; }
 
 /* ==========================================================================
 Custom Styles
@@ -201,9 +202,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .hero {
     position: relative;
     height: 100vh;
-    overflow: hidden;
-  }
-  
+    overflow: hidden;}
   #hero-video {
     position: absolute;
     top: 0;
@@ -211,19 +210,14 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the video scales properly to fill the background */
-    z-index: -1; /* Places the video behind the content */
-  }
-  
+    z-index: -1; /* Places the video behind the content */}
   .typewriter {
     color: #ffffff;
     font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
+    font-weight: bold;}
   .container {
     position: relative;
-    z-index: 1; /* Ensures the content is above the video */
-  }
+    z-index: 1; /* Ensures the content is above the video */}
 .hero p { color: #d1d9d2; font-style: italic; font-size: 17px; }
 .hero a { color: #d1d9d2; }
 .hero-play-btn { height: 99px; 
@@ -329,7 +323,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     font-size: 1.5rem;
     color: #253326;
     margin-bottom: 10px;}
-.flat-box .feature-text {
+.flat-box .flatbox-text {
     font-size: 1rem;
     color: #253326;
     margin-bottom: 5px; /* Space between bullet points */}
@@ -349,7 +343,33 @@ footer p { color: #d1d9d2; line-height: 30px; }
 .footer-nav { list-style: none; padding: 0; } /* the navigation menu on the right*/
 .footer-nav li a { display: block; color: #d1d9d2; padding: 5px; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; text-align: right; }
 .footer-nav li a:hover, .footer-nav li a:focus { text-decoration: none; color: #b6b2a4; }
-
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255); }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;}
+  .close { /* close button */
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;}
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;}
 /* ==========================================================================
 Media Queries
 ========================================================================== */
@@ -390,6 +410,11 @@ Animations
     100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
 }
 .fadeInUpDelay { -webkit-animation-name: fadeInUpDelay; animation-name: fadeInUpDelay; animation-delay: 1s; -webkit-animation-delay: 1s; }
+@-webkit-keyframes fadeInUp {
+    0% { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+.fadeInUpDelay-2 { -webkit-animation-name: fadeInUpDelay-2; animation-name: fadeInUpDelay-2; animation-delay: 2s; -webkit-animation-delay: 2s; }
 @-webkit-keyframes fadeInUp {
     0% { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
     100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
