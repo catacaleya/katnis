@@ -335,7 +335,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     overflow: hidden;
     border-radius: 10px; /* rounded corners */
     text-align: center;
-    height: auto; }
+    height: 90%; }
 .flat-box img {
     width: 100%; /* Make the image fill the box horizontally */
     height: 100%; /* and vertically */
@@ -384,6 +384,7 @@ footer p { color: #d1d9d2; line-height: 30px; }
     top: 50%;
     transform: translate(-50%, -50%);
     background: none; /* No background here, only the modal-content will define the popup's visual style */
+    align-items: center;
   }
   .modal-content {
     background-color: #fff;
@@ -391,8 +392,8 @@ footer p { color: #d1d9d2; line-height: 30px; }
     border: 1px solid #888;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    max-width: 90%;
+    width: 75%;
+    max-width: none;
   }
   .close {
     color: #aaa;
