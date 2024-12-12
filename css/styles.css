@@ -180,9 +180,9 @@ Clearfix
 Headings
 ========================================================================== */
 
-.hero h1 { font-size: 40px; font-weight: 500; color: #d1d9d2; letter-spacing: -1px; margin: 100px 0 20px 0; }
+.hero h1 { font-size: 70px; font-weight: 500; color: #d1d9d2; letter-spacing: -1px; margin: 100px 0 20px 0; }
 .about-me h1 { font-size: 55px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
-.portfolio h1 { font-size: 55px; font-weight: 100; color: #d1d9d2; margin: 100px 0 20px 0; }
+.portfolio h1 { font-size: 55px; font-weight: 100; color: #d1d9d2; margin: 50px 0 20px 0; }
 .testimonials h1 { color: #d1d9d2; font-size: 43px; font-weight: 100; margin: 20px 0 80px 0; font-style: italic; }
 .updates h1 { color: ##253326; font-size: 15px; margin: 0 0 20px 0; text-transform: uppercase; }
 .design h1 { color: #b6b2a4; font-size: 38px; font-weight: 300; margin-top: 0; }
