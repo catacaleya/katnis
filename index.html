@@ -22,15 +22,15 @@
       <![endif]-->
     </head>
     <body>
-      <section class="navigation">
+      <section class="navigation"> <!-- Why we define ids-->
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
               <nav class="pull">
                 <ul class="top-nav">
-                  <li><a href="#getstarted">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li><a href="#media">About Me <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li><a href="#features">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li><a href="#hero">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li><a href="#aboutme">About Me <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li><a href="#updates">Latest Updates <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                   <li class="nav-last"><a href="#design">References <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                 </ul>
               </nav>
@@ -57,13 +57,13 @@
             </div>
           </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator hidden">
           <div class="arrow arrow1"></div>
           <div class="arrow arrow2"></div>
         </div>
       </section>
       
-      <section class="download-now" id="getstarted">
+      <section class="about-me" id="aboutme">
         <div class="container">
           <div class="row">
             <div class="col-md-8 wp1">
@@ -72,15 +72,16 @@
                 <p>I'm a PhD candidate with the strong conviction that there is much more to understand about the human body.
                   Researching human biomechanics using automated modeling and simulation methods makes me lose track of time. </p>
                 <p>Sport is health, and remains healthy when motion is understood. New ideas come naturally to me and I look at them with naïve optimism.
-                  I'd rather invest in connection than content - I'm here to help.</p>
+                  I'd rather invest in connection than content - Write me a mail if you think I could help <br> hello@katnis.de</p>
+                
               </div>
-              <a href="mailto:hello@katnis.de" class="download-btn">Get in Touch</a>
+              <a href="mailto:hello@katnis.de" class="aboutme-btn">Write a Mail</a>
             </div>
           </div>
         </div>
       </section>
       
-      <section class="design" id="design">
+      <section class="portfolio" id="portfolio">
         <div class="container">
 
           <div class="row"> <!-- Row for the heading -->
@@ -197,7 +198,7 @@
               </h1>
               <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>Auae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-              <a href="#" class="download-btn">Download Now 2</a>
+              <a href="#" class="aboutme-btn">Download Now 2</a>
             </div>
           </div>
         </div>
@@ -238,16 +239,20 @@
       -->
 
       <!-- Linkedin Posts -->
-      <section class="features" id="features">
+      <section class="updates" id="updates">
         <div class="container">
+
           <div class="row">
-            <h1>Get the latest Updates</h1>
+            <div class="col-md-12 text-center">
+              <h1>Get the latest Updates</h1>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 features-leftcol wp2">
+
+          <div class="row"> <!-- row for the Posts -->
+            <div class="col-md-6 updates-leftcol wp2">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254856987870453763" height="940" width="504" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
             </div>
-            <div class="col-md-6 features-rightcol wp3">
+            <div class="col-md-6 updates-rightcol wp3">
               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7246837381469786113" height="940" width="504" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
             </div>
           </div>
@@ -263,15 +268,15 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <p> Thank you </p>
+              <li><a href="#">Print your own 3D vertebra</a></li>
             </div>
             <div class="col-md-3">
-              <p> ...  </p>
+              <p> Copyright © 2024, Kati Nispel. All rights reserved.  </p>
             </div>
             <div class="col-md-2 col-md-offset-3">
               <ul class="footer-nav">
-                <li><a href="#">Impressum</a></li>
-                <li><a href="#">Print your own 3D vertebra</a></li>
+                <li><a href="#">Imprint</a></li>
+                <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Get in Touch!</a></li>
               </ul>
             </div>
@@ -294,12 +299,11 @@
       <script src="js/jquery.smooth-scroll.js"></script>
       <script src="js/modernizr.js"></script>
       <script src="js/waypoints.min.js"></script>
-        <!-- Typewriter Script -->
-      <script>
+        
+      <script> // Typewriter Script
         document.addEventListener("DOMContentLoaded", function () {
           const typewriters = document.querySelectorAll(".typewriter");
           const speed = 50;
-      
           const observer = new IntersectionObserver(
             (entries, observer) => {
               entries.forEach((entry) => {
@@ -315,7 +319,6 @@
                       setTimeout(typeWriter, speed);
                     }
                   }
-      
                   typeWriter();
                   observer.unobserve(el); // Stop observing once the animation starts
                 }
@@ -323,9 +326,15 @@
             },
             { threshold: 0.1 } // Trigger when 10% of the element is visible
           );
-      
           typewriters.forEach((el) => observer.observe(el));
         });
       </script>
+      <script> // Arrow appearance delay
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.querySelector('.scroll-indicator').classList.remove('hidden');
+        }, 3000); // Delay of 3 seconds
+      });
+    </script>
     </body>
   </html>
