@@ -64,8 +64,7 @@
         </div>
         <div id="cookieConsentBanner" class="cookie-banner col-md-4 col-md-offset-6">
           <p>
-            🍪 Cookies are my way of saying: 'I see you, <br>
-            I know you, I respect your snack choices.' <br>
+            🍪 Cookies are my way of saying: 'I see you, I know you, I respect your snack choices.' <br>
             <button id="acceptCookies">I'm fine with that</button> 
             <button id="rejectCookies">Staying private</button>
           </p>
@@ -87,7 +86,7 @@
 
               <a href="mailto:hello@katnis.de" class="aboutme-btn">Write a Mail</a>
 
-              <div class ="animated fadeInUpDelay-2 feature-text" >✉ hello@katnis.de </div>
+              <div class ="animated fadeInUpDelay feature-text" >✉ hello@katnis.de </div>
             </div>
           </div>
         </div>
@@ -296,6 +295,7 @@
 
         <!-- Modals / Pop-Ups -->
         <div class="modal-overlay"></div>
+
         <div id="impressumModal" class="modal">
           <div class="modal-content">
             <span onclick="closeModal()" class="close">&times;</span>
@@ -485,40 +485,20 @@
       </script>
       <script> // open and close modals / pop-ups
         let scrollPosition = 0;
-
-        // Function to open modal
-        function openModal() {
-            const modalOverlay = document.querySelector('.modal-overlay');
-            const modal = document.querySelector('.modal-content');
-
-            // Save the scroll position
-            scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Show the modal and overlay
-            modal.style.display = "block";
-            modalOverlay.style.display = "block";
-
-            // Disable scrolling in the background
-            document.body.style.top = `-${scrollPosition}px`;
-            document.body.style.position = 'fixed';
-        }
-
-        // Function to close modal
-        function closeModal() {
-            const modalOverlay = document.querySelector('.modal-overlay');
-            const modal = document.querySelector('.modal-content');
-
-            // Hide modal and overlay
-            modal.style.display = "none";
-            modalOverlay.style.display = "none";
-
-            // Re-enable scrolling
-            document.body.style.position = '';
-            document.body.style.top = '';
-
-            // Restore scroll position
-            window.scrollTo(0, scrollPosition);
-        }
+        function openModal(modalId) {
+          document.getElementById(modalId).style.display = "block";}
+        function closeModal(modalId) {document.getElementById(modalId).style.display = "none";}
+        // Close modals when clicking outside of them
+        window.onclick = function(event) {
+          const modals = document.querySelectorAll('.modal-content');
+          modals.forEach(modal => {
+            if (event.target === modal) {
+              modal.style.display = "none";}
+            });}
+            
+          // Restore scroll position
+          window.scrollTo(0, scrollPosition);
+        
 
         // Attach event listeners
         document.addEventListener("DOMContentLoaded", () => {
