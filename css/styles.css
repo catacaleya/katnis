@@ -371,6 +371,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 footer { background-color: #0d0d0d; padding: 75px 0 100px; } /* top right bottom left. - left padding is inherited from the right padding by default unless explicitly defined
 footer p { color: #d1d9d2; line-height: 30px; }
 .footer-nav { list-style: none; padding: 0; } /* the navigation menu on the right*/
+.footer-nav a { display: block; color: #d1d9d2; padding: 5px; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; }
 .footer-nav li a { display: block; color: #d1d9d2; padding: 5px; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; text-align: right; }
 .footer-nav li a:hover, .footer-nav li a:focus { text-decoration: none; color: #b6b2a4; }
 
