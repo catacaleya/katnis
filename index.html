@@ -283,8 +283,8 @@
             </div>
             <div class="col-md-2 col-md-offset-2">
               <ul class="footer-nav">
-                <a href="#" onclick="openModal('impressumModal')">Legal Notice</a> 
-                <a href="#" onclick="openModal('privacyPolicyModal')">Privacy Policy</a> 
+                <a href="javascript:void(0);" onclick="openModal('impressumModal')">Legal Notice</a> 
+                <a href="#" onclick="event.preventDefault(); openModal('privacyPolicyModal')">Privacy Policy</a> 
               </ul>
             </div>
           </div>
@@ -478,23 +478,25 @@
         }, 3000); // Delay of 3 seconds
       });
       </script>
-      <!--
+      
       <script> // Open and close modals / pop-ups
-        let scrollPosition = 0;
-        
-        function openModal(modalId) {
-            scrollPosition = window.scrollY; // Save current scroll position
-            document.getElementById(modalId).style.display = "block";
+
+        function openModal() {
+            document.getElementById("privacyPolicyModal").style.display = "block";
         }
-        
-        function closeModal(modalId) {
+
+        // function openModal() {
+        //    document.getElementById("privacyPolicyModal").style.display = "block";
+        //}
+
+        function closeModal() {
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.style.display = "none";
                 window.scrollTo(0, scrollPosition); // Restore scroll position
             }
         }
-        
+
         // Close modals when clicking outside of them
         window.onclick = function (event) {
             const modals = document.querySelectorAll('.modal');
@@ -505,7 +507,9 @@
                 }
             });
         };
+      </script>
   
+        <!--
         // Attach event listeners
         document.addEventListener("DOMContentLoaded", () => {
             const closeButtons = document.querySelectorAll('.close');
@@ -520,9 +524,11 @@
                     }
                 });
             });
-        });        
-      </script>
-      -->
+        });
+       -->        
+      
+      
+
       <script> // Cookie Consent
         document.addEventListener('DOMContentLoaded', function() {
           const consentBanner = document.getElementById('cookieConsentBanner');
