@@ -275,7 +275,7 @@
       <footer>
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 footer-nav">
               <li><a href="#">Print your own 3D vertebra</a></li>
             </div>
             <div class="col-md-4">
@@ -283,8 +283,8 @@
             </div>
             <div class="col-md-2 col-md-offset-2">
               <ul class="footer-nav">
-                <a href="javascript:void(0);" onclick="openModal('impressumModal')">Legal Notice</a> 
-                <a href="#" onclick="event.preventDefault(); openModal('privacyPolicyModal')">Privacy Policy</a> 
+                <li><a href="javascript:void(0);" onclick="openModal('impressumModal')">Legal Notice</a></li> 
+                <li><a href="javascript:void(0);" onclick="openModal('privacyPolicyModal')">Privacy Policy</a></li> 
               </ul>
             </div>
           </div>
@@ -293,7 +293,7 @@
         <!-- Modals / Pop-Ups -->
         <div id="impressumModal" class="modal">
           <div class="modal-content">
-            <span onclick="closeModal('impressumModal')" class="close">&times;</span>
+            <span onclick="closeModalLegal('impressumModal')" class="close">&times;</span>
             <h1>Legal Notice</h1>
             <p><strong> Katnis UG </strong></p>
             <p>Horchstr. 8, <br>
@@ -310,7 +310,7 @@
 
         <div id="privacyPolicyModal" class="modal">
           <div class="modal-content">
-            <span onclick="closeModal('privacyPolicyModal')" class="close">&times;</span>
+            <span onclick="closeModalPrivacy('privacyPolicyModal')" class="close">&times;</span>
             <h1>Privacy Policy for Katnis</h1>
 
                 <p>At Katnis, accessible from katnis.de, one of our main priorities is the privacy of our visitors.
@@ -480,33 +480,35 @@
       </script>
       
       <script> // Open and close modals / pop-ups
-
-        function openModal() {
+        function openModalPrivacy() {
             document.getElementById("privacyPolicyModal").style.display = "block";
         }
+        function openModalLegal() {
+            document.getElementById("impressumModal").style.display = "block";
+        }
+        function closeModalPrivacy() {
+            document.getElementById("privacyPolicyModal").style.display = "none";
+            }
+        function closeModalLegal() {
+            document.getElementById("impressumModal").style.display = "none";
+            }
 
-        // function openModal() {
-        //    document.getElementById("privacyPolicyModal").style.display = "block";
-        //}
-
-        function closeModal() {
+        // Function to close modal if clicking outside the modal content
+        function closeModalOnOutsideClick(event, modalId) {
             const modal = document.getElementById(modalId);
-            if (modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
-                window.scrollTo(0, scrollPosition); // Restore scroll position
             }
         }
 
-        // Close modals when clicking outside of them
-        window.onclick = function (event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                    window.scrollTo(0, scrollPosition); // Restore scroll position
-                }
-            });
-        };
+        // Add event listeners for clicking outside the modal
+        document.getElementById("privacyPolicyModal").addEventListener('click', function(event) {
+            closeModalOnOutsideClick(event, "privacyPolicyModal");
+        });
+        document.getElementById("impressumModal").addEventListener('click', function(event) {
+            closeModalOnOutsideClick(event, "impressumModal");
+        });
+
       </script>
   
         <!--
