@@ -15,536 +15,535 @@
     <link href="../../css/jquery.fancybox.css" rel="stylesheet">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    </head>
-    <body>
-      <section class="navigation"> <!-- Why we define ids-->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-              <nav class="pull">
-                <ul class="top-nav">
-                  <li><a href="#hero">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li><a href="#aboutme">About Me <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li><a href="#updates">Latest Updates <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                  <li class="nav-last"><a href="#design">References <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                </ul>
-              </nav>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Inline CSS for Modals -->
+    <style>
+      /* Modal Background */
+      .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 999; /* Sit on top */
+          left: 50%;
+          top: 50%;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+          background-color: #fefefe;
+          margin: 10% auto; /* 10% from the top and centered */
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+          max-width: 600px;
+          border-radius: 8px;
+          position: relative;
+      }
+
+      /* Close Button */
+      .close {
+          color: #aaa;
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          font-size: 28px;
+          font-weight: bold;
+          cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+      }
+
+      /* Cookie Consent Banner */
+      #cookieConsentBanner {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #fff;
+          padding: 15px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          border-radius: 5px;
+          z-index: 1000;
+      }
+
+      /* Scroll Indicator */
+      .scroll-indicator.hidden {
+          display: none;
+      }
+
+      .scroll-indicator {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          animation: bounce 2s infinite;
+      }
+
+      .arrow {
+          width: 10px;
+          height: 10px;
+          border-right: 2px solid #fff;
+          border-bottom: 2px solid #fff;
+          transform: rotate(45deg);
+          margin: 5px 0;
+      }
+
+      @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+          40% { transform: translateX(-50%) translateY(-10px); }
+          60% { transform: translateX(-50%) translateY(-5px); }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="navigation"> <!-- Why we define ids-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <nav class="pull">
+              <ul class="top-nav">
+                <li><a href="#hero">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                <li><a href="#aboutme">About Me <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                <li><a href="#updates">Latest Updates <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                <li class="nav-last"><a href="#design">References <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero" id="hero">
+      <img src="../img/logo_beige_onblack.png" alt="Logo" class="logo">
+      <video autoplay muted playsinline id="hero-video">
+        <source src="../img/promo_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-right">
+            <a href="#"><i class="fa fa-navicon fa-2x nav_slide_button"></i></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 wp1 col-md-offset-4">
+            <h1 class="typewriter" data-text="Individual Biomechanical Models from Medical Images"></h1>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator hidden">
+        <div class="arrow arrow1"></div>
+        <div class="arrow arrow2"></div>
+      </div>
+      <div id="cookieConsentBanner" class="cookie-banner col-md-4 col-md-offset-6" style="display: none;">
+        <p>
+          🍪 Cookies are my way of saying: 'I see you, I know you, I respect your snack choices.' <br>
+          <button id="acceptCookies">I'm fine with that</button> 
+          <button id="rejectCookies">Staying private</button>
+        </p>
+      </div>
+    </section>
+    
+    
+    <section class="about-me" id="aboutme">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 wp1">
+            <h1 class="typewriter" data-text="Hi, I'm Kati."></h1>
+            <div class="animated fadeInUpDelay">
+              <p>Nice to see you here. <br> 
+                I'm a creative mind and biomechanics expert, specialized in automated modeling processes and numerical simulations. My multidisciplinary work at the intersection of medicine, informatics and mechanics has 
+                allowed me to develop a profound knowledge base - From MRI & CT image processing to finite element simulation models. Write me an e-mail if you think I could help.</p>
+            </div>
+
+            <a href="mailto:hello@katnis.de" class="aboutme-btn">✉ hello@katnis.de</a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+
+        <div class="row"> <!-- Row for the heading -->
+          <div class="col-md-12 text-center">
+            <h1> Portfolio </h1>
+          </div>
+        </div>
+        
+        <div class="row"> <!-- Row for the Boxes -->
+          <div class="col-md-4">
+            <div class="flat-box">
+              <img src="../img/FEM.png" alt="Modeling and simulation graphic">
+              <div class="text-content">
+                <p class="title">Hands-on Modeling & Simulation</p>
+                <p class="flatbox-text">
+                  <strong>From Data to Model:</strong> Using medical imaging, 3D scans, or sensor data to build precise models that suit your project’s requirements.<br><br>
+                  <strong>Flexible Output Formats:</strong> Delivering models as CAD files, surface meshes or FEM meshes designed from biomechanical input.<br><br>
+                  <strong>Contact Modeling:</strong> Experienced in modeling neighbouring anatomical structures, with aligned interface FEM nodes for optimized simulations.<br><br>
+                  <strong>Mesh:</strong> I do homogeneous tetrahedral meshes. If you provide me with a more complex, structured FEM mesh, I can deform it into a patient-specific geometry.<br><br>
+              </p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-4">
+            <div class="flat-box">
+              <img src="../img/consult.jpeg" alt="Consulting services graphic">
+              <div class="text-content">
+                <p class="title">Consulting & Guidance</p>
+                <p class="flatbox-text">
+                  <strong>Data-to-Model:</strong> I support you in evaluating how you get to your individualized medical product accurately and effectively.<br><br>
+                  <strong>Numerical Simulations Strategy:</strong> Providing strategic guidance for selecting appropriate simulation methods for your goals. <br><br>
+                  <strong>Biomechanical Product Design:</strong> Working with you to optimize workflows, adapt modeling & simulation strategies, and integrate biomechanical insights effectively into your product design.
+                </p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-4">
+            <div class="flat-box">
+              <img src="../img/Slam.jpg" alt="Science Slam and Talk graphic">
+              <div class="text-content">
+                <p class="title">Public Speaking & Events</p>
+                <p class="flatbox-text">
+                  You're looking for a speaker for your next event? I specialize in science slams, technical talks, and workshops, with experience presenting on topics like AI in biomechanics, 
+                  patient-specific medicine and numerical simulation of the spine. With a proven track record - such as winning multiple science communication competitions and presenting at international conferences, 
+                  I deliver clear, engaging, and impactful presentations tailored to diverse audiences. <br><br><br>
+                </p>
+                <a href="https://youtube.com/playlist?list=PLmmYoZnSG5NfV2OlAzCdWj7e5Ej8-N12j&si=uioQu744OU7I7qY6" class="talks-btn">Previous Talks</a>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <!-- Rest of your sections... -->
+
+    <section class="updates" id="updates">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="typewriter" data-text="Get the latest Updates"></h1>
+          </div>
+        </div>
+
+        <div class="row"> <!-- row for the Posts -->
+          <div class="col-md-6 updates-leftcol wp2">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254856987870453763" height="940" width="504" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
+          </div>
+          <div class="col-md-6 updates-rightcol wp3">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7246837381469786113" height="940" width="504" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+           <a href="mailto:hello@katnis.de" class="try-btn">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>      
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 footer-nav">
+            <a href="#" onclick="openModalLegal(); return false;">Print your own 3D vertebra</a>
+          </div>
+          <div class="col-md-4">
+            <p> Copyright © 2024, Kati Nispel. All rights reserved.  </p>
+          </div>
+          <div class="col-md-2 col-md-offset-2">
+            <ul class="footer-nav">
+              <li><a href="#" onclick="openModalLegal(); return false;">Legal Notice</a></li> 
+              <li><a href="#" onclick="openModalPrivacy(); return false;">Privacy Policy</a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals / Pop-Ups -->
+      <div id="impressumModal" class="modal">
+        <div class="modal-content">
+          <span onclick="closeModalLegal()" class="close">&times;</span>
+          <h1>Legal Notice</h1>
+          <p><strong> Katnis UG </strong></p>
+          <p>Horchstr. 8, <br>
+            35232 Dautphetal</p>
+
+          <p>Tel.: +49 160 6218 965 <br>
+          E-mail: hello@katnis.de</p>
+          
+          <p>Amtsgericht Marburg HRB 8618 <br> 
+            Managing Director: Kati Nispel <br>
+            USt-IdNr: </p>
+        </div>
+      </div>
+
+      <div id="privacyPolicyModal" class="modal">
+        <div class="modal-content">
+          <span onclick="closeModalPrivacy()" class="close">&times;</span>
+          <h1>Privacy Policy for Katnis</h1>
+
+              <p>At Katnis, accessible from katnis.de, one of our main priorities is the privacy of our visitors.
+                This Privacy Policy document contains types of information that is collected and recorded by Katnis and
+                how we use it.</p>
+        
+              <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to
+                contact us.</p>
+        
+              <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards
+                to the information that they shared and/or collect in Katnis. This policy is not applicable to any
+                information collected offline or via channels other than this website.</p>
       
-      <section class="hero" id="hero">
-        <img src="../img/logo_beige_onblack.png" alt="Logo" class="logo">
-        <video autoplay muted loop playsinline id="hero-video">
-          <source src="../img/promo_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-right">
-              <a href="#"><i class="fa fa-navicon fa-2x nav_slide_button"></i></a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-8 wp1 col-md-offset-4">
-              <h1 class="typewriter" data-text="Individual Biomechanical Models from Medical Images"></h1>
-            </div>
-          </div>
-        </div>
-        <div class="scroll-indicator hidden">
-          <div class="arrow arrow1"></div>
-          <div class="arrow arrow2"></div>
-        </div>
-        <div id="cookieConsentBanner" class="cookie-banner col-md-4 col-md-offset-6">
-          <p>
-            🍪 Cookies are my way of saying: 'I see you, I know you, I respect your snack choices.' <br>
-            <button id="acceptCookies">I'm fine with that</button> 
-            <button id="rejectCookies">Staying private</button>
+            <h2>Consent</h2>
+      
+              <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+      
+            <h2>Information we collect</h2>
+      
+              <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will
+                be made clear to you at the point we ask you to provide your personal information.</p>
+              <p>If you contact us directly, we may receive additional information about you such as your name, email address,
+                phone number, the contents of the message and/or attachments you may send us, and any other information you may
+                choose to provide.</p>
+              <p>When you register for an Account, we may ask for your contact information, including items such as name,
+                company name, address, email address, and telephone number.</p>
+      
+            <h2>How we use your information</h2>
+      
+              <p>We use the information we collect in various ways, including to:</p>
+        
+              <ul>
+                <li>Provide, operate, and maintain our webste</li>
+                <li>Improve, personalize, and expand our webste</li>
+                <li>Understand and analyze how you use our webste</li>
+                <li>Develop new products, services, features, and functionality</li>
+                <li>Communicate with you, either directly or through one of our partners, including for customer service, to
+                    provide you with updates and other information relating to the webste, and for marketing and promotional
+                    purposes</li>
+                <li>Send you emails</li>
+                <li>Find and prevent fraud</li>
+              </ul>
+      
+            <h2>Log Files</h2>
+      
+              <p>Katnis follows a standard procedure of using log files. These files log visitors when they visit websites.
+                All hosting companies do this and a part of hosting services' analytics. The information collected by log files
+                include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp,
+                referring/exit pages, and possibly the number of clicks. These are not linked to any information that is
+                personally identifiable. The purpose of the information is for analyzing trends, administering the site,
+                tracking users' movement on the website, and gathering demographic information. Our Privacy Policy was created
+                with the help of the <a href="https://www.privacypolicygenerator.info">Privacy Policy Generator</a> and the <a
+                    href="https://www.disclaimergenerator.org/">Disclaimer Generator</a>.</p>
+      
+            <h2>Advertising Partners Privacy Policies</h2>
+      
+              <p>You may consult this list to find the Privacy Policy for each of the advertising partners of Katnis.</p>
+        
+              <p>Third-party ad servers or ad networks uses technologies like cookies 🍪, JavaScript, or Web Beacons that are used
+                in their respective advertisements and links that appear on Katnis, which are sent directly to users'
+                browser. They automatically receive your IP address when this occurs. These technologies are used to measure
+                the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on
+                websites that you visit.</p>
+        
+              <p>Note that Katnis has no access to or control over these cookies that are used by third-party advertisers.
+              </p>
+      
+            <h2>Third Party Privacy Policies</h2>
+      
+              <p>Katnis's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to
+                consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may
+                include their practices and instructions about how to opt-out of certain options. </p>
+        
+              <p>You can choose to disable cookies through your individual browser options. To know more detailed information
+                about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
+      
+            <h2>CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
+      
+              <p>Under the CCPA, among other rights, California consumers have the right to:</p>
+              <p>Request that a business that collects a consumer's personal data disclose the categories and specific pieces of
+                personal data that a business has collected about consumers.</p>
+              <p>Request that a business delete any personal data about the consumer that a business has collected.</p>
+              <p>Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</p>
+              <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights,
+                please contact us.</p>
+      
+            <h2>GDPR Data Protection Rights</h2>
+      
+              <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to
+                the following:</p>
+              <p>The right to access – You have the right to request copies of your personal data. We may charge you a small fee
+                for this service.</p>
+              <p>The right to rectification – You have the right to request that we correct any information you believe is
+                inaccurate. You also have the right to request that we complete the information you believe is incomplete.</p>
+              <p>The right to erasure – You have the right to request that we erase your personal data, under certain
+                conditions.</p>
+              <p>The right to restrict processing – You have the right to request that we restrict the processing of your
+                personal data, under certain conditions.</p>
+              <p>The right to object to processing – You have the right to object to our processing of your personal data, under
+                certain conditions.</p>
+              <p>The right to data portability – You have the right to request that we transfer the data that we have collected
+                to another organization, or directly to you, under certain conditions.</p>
+              <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights,
+                please contact us.</p>
+      
+            <h2>Children's Information</h2>
+              
+              <p>Another part of our priority is adding protection for children while using the internet. We encourage parents
+                and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+        
+              <p>Katnis does not knowingly collect any Personal Identifiable Information from children under the age of 13.
+              If you think that your child provided this kind of information on our website, we strongly encourage you to
+              contact us immediately and we will do our best efforts to promptly remove such information from our records.
           </p>
         </div>
-      </section>
+      </div>
+
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js?v=1.7"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/jquery.smooth-scroll.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/waypoints.min.js"></script>
       
-      
-      <section class="about-me" id="aboutme">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 wp1">
-              <h1 class="typewriter" data-text="Hi, I'm Kati."></h1>
-              <div class="animated fadeInUpDelay">
-                <p>Nice to see you here. <br> 
-                  I'm a creative mind and biomechanics expert, specialized in automated modeling processes and numerical simulations. My multidisciplinary work at the intersection of medicine, informatics and mechanics has 
-                  allowed me to develop a profound knowledge base - From MRI & CT image processing to finite element simulation models. Write me an e-mail if you think I could help.</p>
-              </div>
-
-              <a href="mailto:hello@katnis.de" class="aboutme-btn">✉ hello@katnis.de</a>
-
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section class="portfolio" id="portfolio">
-        <div class="container">
-
-          <div class="row"> <!-- Row for the heading -->
-            <div class="col-md-12 text-center">
-              <h1> Portfolio </h1>
-            </div>
-          </div>
-          
-          <div class="row"> <!-- Row for the Boxes -->
-            <div class="col-md-4">
-              <div class="flat-box">
-                <img src="../img/FEM.png" alt="Modeling and simulation graphic">
-                <div class="text-content">
-                  <p class="title">Hands-on Modeling & Simulation</p>
-                  <p class="flatbox-text">
-                    <strong>From Data to Model:</strong> Using medical imaging, 3D scans, or sensor data to build precise models that suit your project’s requirements.<br><br>
-                    <strong>Flexible Output Formats:</strong> Delivering models as CAD files, surface meshes or FEM meshes designed from biomechanical input.<br><br>
-                    <strong>Contact Modeling:</strong> Experienced in modeling neighbouring anatomical structures, with aligned interface FEM nodes for optimized simulations.<br><br>
-                    <strong>Mesh:</strong> I do homogeneous tetrahedral meshes. If you provide me with a more complex, structured FEM mesh, I can deform it into a patient-specific geometry.<br><br>
-                </p>
-                </div>
-              </div>
-            </div>
-          
-            <div class="col-md-4">
-              <div class="flat-box">
-                <img src="../img/consult.jpeg" alt="Consulting services graphic">
-                <div class="text-content">
-                  <p class="title">Consulting & Guidance</p>
-                  <p class="flatbox-text">
-                    <strong>Data-to-Model:</strong> I support you in evaluating how you get to your individualized medical product accurately and effectively.<br><br>
-                    <strong>Numerical Simulations Strategy:</strong> Providing strategic guidance for selecting appropriate simulation methods for your goals. <br><br>
-                    <strong>Biomechanical Product Design:</strong> Working with you to optimize workflows, adapt modeling & simulation strategies, and integrate biomechanical insights effectively into your product design.
-                  </p>
-                </div>
-              </div>
-            </div>
-          
-            <div class="col-md-4">
-              <div class="flat-box">
-                <img src="../img/Slam.jpg" alt="Science Slam and Talk graphic">
-                <div class="text-content">
-                  <p class="title">Public Speaking & Events</p>
-                  <p class="flatbox-text">
-                    You're looking for a speaker for your next event? I specialize in science slams, technical talks, and workshops, with experience presenting on topics like AI in biomechanics, 
-                    patient-specific medicine and numerical simulation of the spine. With a proven track record - such as winning multiple science communication competitions and presenting at international conferences, 
-                    I deliver clear, engaging, and impactful presentations tailored to diverse audiences. <br><br><br>
-                  </p>
-                  <a href="https://youtube.com/playlist?list=PLmmYoZnSG5NfV2OlAzCdWj7e5Ej8-N12j&si=uioQu744OU7I7qY6" class="talks-btn">Previous Talks</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Hover-over Boxes 
-      <section>
-        <div class="container h2-container section-title-h2">
-           <h2 style="margin-top: 50px;">Recent work</h2>
-        </div>
-
-        <div class="container grid-gallery-hover">
-          <div class="workbox workbox-1">
-              <div class="workbox-image">
-                 <img src="images/Celonis.jpg" alt="Celonis SE">
-              </div>
-              <div class="workbox-content">
-                 <h3>Celonis SE</h3>
-                 <p>At <a href="https://www.celonis.com/" target="_blank">Celonis</a>, I was optimizing Lead Management
-                    processes with
-                    Salesforce and pardot. I
-                    improved technology use and data flow through marketing systems.
-                    I also managed Google Ads globally.</p>
-              </div>
-          </div>
-     
-          <div class="workbox workbox-2">
-              <div class="workbox-image">
-                 <img src="images/yoyaba-yellow.jpg" alt="nachnordosten.de">
-              </div>
-              <div class="workbox-content">
-                 <h3>YOYABA</h3>
-                 <p>Currently, I'm building <a href="https://www.yoyaba.com">YOYABA's</a> Revenue Operations & CRM Service department and help B2B SaaS clients convert their demand. <br>
-                 </p>
-              </div>
-          </div> 
-     
-          <div class="workbox workbox-3">
-              <div class="workbox-image">
-                 <img src="/images/Xentral_Logo_RGB.jpg" alt="xentral">
-              </div>
-              <div class="workbox-content">
-                 <h3>xentral</h3>
-                 <p>At <a href="https://xentral.com/en">xentral</a> I was responsible for Marketing Operations, including all things analytics and ownership of Hubspot from a Marketing perspective.
-                 </p>
-              </div>
-          </div>
-     
-        </div>
-      </section>
-      -->
-      
-      <!--
-      <section class="download-now_2" id="getstarted_2">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 wp1 col-md-offset-6">
-              <h1>
-              What I do
-              </h1>
-              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Auae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-              <a href="#" class="aboutme-btn">Download Now 2</a>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      
-      <!--
-      <section class="testimonials" id="media">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h1> Recent Projects </h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div id="firstSlider">
-                <ul class="slides">
-                  <li>
-                    <div class="avatar"><img src="img/SHER.png" alt="SHER"></div>
-                    <h2> With SHER, I build lattice structure seat pads based on biomechanical measurements. </h2>
-                    <div class="col-md-12 text-center">
-                      <a href="https://doi.org/10.1177/17543371241272828" class="try-btn">Learn More</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="avatar"><img src="img/2ndref.png" alt="Second Reference"></div>
-                    <h2>  </h2>
-                    <div class="col-md-12 text-center">
-                      <a href="#" class="try-btn">Learn More</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      -->
-
-      <!-- Linkedin Posts -->
-      <section class="updates" id="updates">
-        <div class="container">
-
-          <div class="row">
-            <div class="col-md-12">
-              <h1 class="typewriter" data-text="Get the latest Updates"></h1>
-            </div>
-          </div>
-
-          <div class="row"> <!-- row for the Posts -->
-            <div class="col-md-6 updates-leftcol wp2">
-              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254856987870453763" height="940" width="504" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
-            </div>
-            <div class="col-md-6 updates-rightcol wp3">
-              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7246837381469786113" height="940" width="504" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-             <a href="mailto:hello@katnis.de" class="try-btn">Get in Touch</a>
-            </div>
-          </div>
-        </div>
-      </section>      
-
-      <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 footer-nav">
-              <a href="#">Print your own 3D vertebra</a>
-            </div>
-            <div class="col-md-4">
-              <p> Copyright © 2024, Kati Nispel. All rights reserved.  </p>
-            </div>
-            <div class="col-md-2 col-md-offset-2">
-              <ul class="footer-nav">
-                <li><a href="#" onclick="openModalLegal('impressumModal')">Legal Notice</a></li> 
-                <li><a href="#" onclick="openModalPrivacy('privacyPolicyModal')">Privacy Policy</a></li> 
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modals / Pop-Ups -->
-        <div id="impressumModal" class="modal">
-          <div class="modal-content">
-            <span onclick="closeModalLegal('impressumModal')" class="close">&times;</span>
-            <h1>Legal Notice</h1>
-            <p><strong> Katnis UG </strong></p>
-            <p>Horchstr. 8, <br>
-              35232 Dautphetal</p>
-
-            <p>Tel.: +49 160 6218 965 <br>
-            E-mail: hello@katnis.de</p>
-            
-            <p>Amtsgericht Marburg HRB 8618 <br> 
-              Managing Director: Kati Nispel <br>
-              USt-IdNr: </p>
-          </div>
-        </div>
-
-        <div id="privacyPolicyModal" class="modal">
-          <div class="modal-content">
-            <span onclick="closeModalPrivacy('privacyPolicyModal')" class="close">&times;</span>
-            <h1>Privacy Policy for Katnis</h1>
-
-                <p>At Katnis, accessible from katnis.de, one of our main priorities is the privacy of our visitors.
-                  This Privacy Policy document contains types of information that is collected and recorded by Katnis and
-                  how we use it.</p>
-          
-                <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to
-                  contact us.</p>
-          
-                <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards
-                  to the information that they shared and/or collect in Katnis. This policy is not applicable to any
-                  information collected offline or via channels other than this website.</p>
-        
-              <h2>Consent</h2>
-        
-                <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
-        
-              <h2>Information we collect</h2>
-        
-                <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will
-                  be made clear to you at the point we ask you to provide your personal information.</p>
-                <p>If you contact us directly, we may receive additional information about you such as your name, email address,
-                  phone number, the contents of the message and/or attachments you may send us, and any other information you may
-                  choose to provide.</p>
-                <p>When you register for an Account, we may ask for your contact information, including items such as name,
-                  company name, address, email address, and telephone number.</p>
-        
-              <h2>How we use your information</h2>
-        
-                <p>We use the information we collect in various ways, including to:</p>
-          
-                <ul>
-                  <li>Provide, operate, and maintain our webste</li>
-                  <li>Improve, personalize, and expand our webste</li>
-                  <li>Understand and analyze how you use our webste</li>
-                  <li>Develop new products, services, features, and functionality</li>
-                  <li>Communicate with you, either directly or through one of our partners, including for customer service, to
-                      provide you with updates and other information relating to the webste, and for marketing and promotional
-                      purposes</li>
-                  <li>Send you emails</li>
-                  <li>Find and prevent fraud</li>
-                </ul>
-        
-              <h2>Log Files</h2>
-        
-                <p>Katnis follows a standard procedure of using log files. These files log visitors when they visit websites.
-                  All hosting companies do this and a part of hosting services' analytics. The information collected by log files
-                  include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp,
-                  referring/exit pages, and possibly the number of clicks. These are not linked to any information that is
-                  personally identifiable. The purpose of the information is for analyzing trends, administering the site,
-                  tracking users' movement on the website, and gathering demographic information. Our Privacy Policy was created
-                  with the help of the <a href="https://www.privacypolicygenerator.info">Privacy Policy Generator</a> and the <a
-                      href="https://www.disclaimergenerator.org/">Disclaimer Generator</a>.</p>
-        
-        
-              <h2>Advertising Partners Privacy Policies</h2>
-        
-                <P>You may consult this list to find the Privacy Policy for each of the advertising partners of Katnis.</p>
-          
-                <p>Third-party ad servers or ad networks uses technologies like cookies 🍪, JavaScript, or Web Beacons that are used
-                  in their respective advertisements and links that appear on Katnis, which are sent directly to users'
-                  browser. They automatically receive your IP address when this occurs. These technologies are used to measure
-                  the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on
-                  websites that you visit.</p>
-          
-                <p>Note that Katnis has no access to or control over these cookies that are used by third-party advertisers.
-                </p>
-        
-              <h2>Third Party Privacy Policies</h2>
-        
-                <p>Katnis's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to
-                  consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may
-                  include their practices and instructions about how to opt-out of certain options. </p>
-          
-                <p>You can choose to disable cookies through your individual browser options. To know more detailed information
-                  about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
-        
-              <h2>CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
-        
-                <p>Under the CCPA, among other rights, California consumers have the right to:</p>
-                <p>Request that a business that collects a consumer's personal data disclose the categories and specific pieces of
-                  personal data that a business has collected about consumers.</p>
-                <p>Request that a business delete any personal data about the consumer that a business has collected.</p>
-                <p>Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</p>
-                <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights,
-                  please contact us.</p>
-        
-              <h2>GDPR Data Protection Rights</h2>
-        
-                <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to
-                  the following:</p>
-                <p>The right to access – You have the right to request copies of your personal data. We may charge you a small fee
-                  for this service.</p>
-                <p>The right to rectification – You have the right to request that we correct any information you believe is
-                  inaccurate. You also have the right to request that we complete the information you believe is incomplete.</p>
-                <p>The right to erasure – You have the right to request that we erase your personal data, under certain
-                  conditions.</p>
-                <p>The right to restrict processing – You have the right to request that we restrict the processing of your
-                  personal data, under certain conditions.</p>
-                <p>The right to object to processing – You have the right to object to our processing of your personal data, under
-                  certain conditions.</p>
-                <p>The right to data portability – You have the right to request that we transfer the data that we have collected
-                  to another organization, or directly to you, under certain conditions.</p>
-                <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights,
-                  please contact us.</p>
-        
-              <h2>Children's Information</h2>
-                
-                <p>Another part of our priority is adding protection for children while using the internet. We encourage parents
-                  and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
-          
-                <p>Katnis does not knowingly collect any Personal Identifiable Information from children under the age of 13.
-                If you think that your child provided this kind of information on our website, we strongly encourage you to
-                contact us immediately and we will do our best efforts to promptly remove such information from our records.
-            </p>
-          </div>
-        </div>
-
-        </div>
-      </footer>
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="js/jquery.fancybox.pack.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/scripts.js?v=1.7"></script>
-      <script src="js/jquery.flexslider.js"></script>
-      <script src="js/jquery.smooth-scroll.js"></script>
-      <script src="js/modernizr.js"></script>
-      <script src="js/waypoints.min.js"></script>
-        
-      <script> // Typewriter Script
-        document.addEventListener("DOMContentLoaded", function () {
-          const typewriters = document.querySelectorAll(".typewriter");
-          const speed = 50;
-          const observer = new IntersectionObserver(
-            (entries, observer) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  const el = entry.target;
-                  const text = el.getAttribute("data-text");
-                  let i = 0;
-      
-                  function typeWriter() {
-                    if (i < text.length) {
-                      el.textContent += text.charAt(i);
-                      i++;
-                      setTimeout(typeWriter, speed);
-                    }
+    <script> // Typewriter Script
+      document.addEventListener("DOMContentLoaded", function () {
+        const typewriters = document.querySelectorAll(".typewriter");
+        const speed = 50;
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const el = entry.target;
+                const text = el.getAttribute("data-text");
+                let i = 0;
+    
+                function typeWriter() {
+                  if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
                   }
-                  typeWriter();
-                  observer.unobserve(el); // Stop observing once the animation starts
                 }
-              });
-            },
-            { threshold: 0.1 } // Trigger when 10% of the element is visible
-          );
-          typewriters.forEach((el) => observer.observe(el));
-        });
-      </script>
-      <script> // Arrow appearance delay
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          document.querySelector('.scroll-indicator').classList.remove('hidden');
-        }, 3000); // Delay of 3 seconds
-      });
-      </script>
-      
-      <script> // Open and close modals / pop-ups
-        function openModalPrivacy() {
-            document.getElementById("privacyPolicyModal").style.display = "block";
-        }
-        function openModalLegal() {
-            document.getElementById("impressumModal").style.display = "block";
-        }
-        function closeModalPrivacy() {
-            document.getElementById("privacyPolicyModal").style.display = "none";
-            }
-        function closeModalLegal() {
-            document.getElementById("impressumModal").style.display = "none";
-            }
-
-        // Function to close modal if clicking outside the modal content
-        function closeModalOnOutsideClick(event, modalId) {
-            const modal = document.getElementById(modalId);
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // Add event listeners for clicking outside the modal
-        document.getElementById("privacyPolicyModal").addEventListener('click', function(event) {
-            closeModalOnOutsideClick(event, "privacyPolicyModal");
-        });
-        document.getElementById("impressumModal").addEventListener('click', function(event) {
-            closeModalOnOutsideClick(event, "impressumModal");
-        });
-
-      </script>
-  
-        <!--
-        // Attach event listeners
-        document.addEventListener("DOMContentLoaded", () => {
-            const closeButtons = document.querySelectorAll('.close');
-        
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function (event) {
-                    event.preventDefault(); // Prevent default link behavior
-        
-                    const modal = this.closest('.modal');
-                    if (modal) {
-                        closeModal(modal.id);
-                    }
-                });
+                typeWriter();
+                observer.unobserve(el); // Stop observing once the animation starts
+              }
             });
-        });
-       -->        
-      
-      
+          },
+          { threshold: 0.1 } // Trigger when 10% of the element is visible
+        );
+        typewriters.forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script> // Arrow appearance delay
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.scroll-indicator').classList.remove('hidden');
+      }, 3000); // Delay of 3 seconds
+    });
+    </script>
+    
+    <script> // Open and close modals / pop-ups
+      function openModalPrivacy() {
+          document.getElementById("privacyPolicyModal").style.display = "block";
+      }
+      function openModalLegal() {
+          document.getElementById("impressumModal").style.display = "block";
+      }
+      function closeModalPrivacy() {
+          document.getElementById("privacyPolicyModal").style.display = "none";
+          }
+      function closeModalLegal() {
+          document.getElementById("impressumModal").style.display = "none";
+          }
 
-      <script> // Cookie Consent
-        document.addEventListener('DOMContentLoaded', function() {
-          const consentBanner = document.getElementById('cookieConsentBanner');
-          const acceptCookiesBtn = document.getElementById('acceptCookies');
-          const rejectCookiesBtn = document.getElementById('rejectCookies');
-          if (!localStorage.getItem('cookiesConsent')) {         // Check if the user has already consented
-            consentBanner.style.display = 'block';}
-          acceptCookiesBtn.onclick = function() {
-            localStorage.setItem('cookiesConsent', 'accepted');
-            consentBanner.style.display = 'none';
-            console.log('User accepted cookies');};
-          rejectCookiesBtn.onclick = function() {
-            localStorage.setItem('cookiesConsent', 'rejected');
-            consentBanner.style.display = 'none';
-            console.log('User rejected cookies');};
+      // Function to close modal if clicking outside the modal content
+      function closeModalOnOutsideClick(event, modalId) {
+          const modal = document.getElementById(modalId);
+          if (event.target === modal) {
+              modal.style.display = "none";
+          }
+      }
+
+      // Add event listeners for clicking outside the modal
+      document.getElementById("privacyPolicyModal").addEventListener('click', function(event) {
+          closeModalOnOutsideClick(event, "privacyPolicyModal");
+      });
+      document.getElementById("impressumModal").addEventListener('click', function(event) {
+          closeModalOnOutsideClick(event, "impressumModal");
+      });
+
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("hero-video").removeAttribute("loop");
+      });
+    </script>
+
+      <!--
+      // Attach event listeners
+      document.addEventListener("DOMContentLoaded", () => {
+          const closeButtons = document.querySelectorAll('.close');
+      
+          closeButtons.forEach(button => {
+              button.addEventListener('click', function (event) {
+                  event.preventDefault(); // Prevent default link behavior
+      
+                  const modal = this.closest('.modal');
+                  if (modal) {
+                      closeModal(modal.id);
+                  }
+              });
           });
-       </script>
-    </body>
-  </html>
+      });
+     -->        
+    
+
+    <script> // Cookie Consent
+      document.addEventListener('DOMContentLoaded', function() {
+        const consentBanner = document.getElementById('cookieConsentBanner');
+        const acceptCookiesBtn = document.getElementById('acceptCookies');
+        const rejectCookiesBtn = document.getElementById('rejectCookies');
+        if (!localStorage.getItem('cookiesConsent')) {         // Check if the user has already consented
+          consentBanner.style.display = 'block';}
+        acceptCookiesBtn.onclick = function() {
+          localStorage.setItem('cookiesConsent', 'accepted');
+          consentBanner.style.display = 'none';
+          console.log('User accepted cookies');};
+        rejectCookiesBtn.onclick = function() {
+          localStorage.setItem('cookiesConsent', 'rejected');
+          consentBanner.style.display = 'none';
+          console.log('User rejected cookies');};
+        });
+     </script>
+  </body>
+</html>
