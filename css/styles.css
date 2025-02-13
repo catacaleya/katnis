@@ -28,6 +28,11 @@ html { font-size: 85%; /* 1 */
 -ms-text-size-adjust: 85%; /* 2 */ }
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
+  @media (max-width: 576px) { /* For small screens */
+    html {
+      font-size: 95%; /* Increase base font size */
+    }
+  }
 html, button, input, select, textarea { font-family: 'Lato', sans-serif; }
 /* * Addresses margins handled incorrectly in IE 6/7. */
 body { margin: 0; font-family: 'Lato', sans-serif; }
