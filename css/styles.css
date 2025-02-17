@@ -237,10 +237,6 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     -webkit-transition: all 1s ease; 
     -o-transition: all 1s ease; }
 .hero-play-btn:hover, .hero-play-btn:focus { transform: translate(0, -15px); -webkit-transform: translate(0, -15px); -o-transform: translate(0, -15px); -moz-transform: translate(0, -15px); }
-.video-container {
-    overflow: hidden;}
-.video-container video {
-    width: auto;}
 .cookie-banner {
     position: fixed;
     bottom: 20px;
@@ -425,11 +421,9 @@ Media Queries
 }
 /* Responsive adjustments (max: taller than wide, min: wider than tall*/
 @media (max-aspect-ratio: 16/9) {
-    .video-container video {
+    #hero-video {
       height: auto;
-      width: 100vw;
-    }
-  }
+      width: 100vw;}}
 /* ==========================================================================
 Animations
 ========================================================================== */
