@@ -238,13 +238,9 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     -o-transition: all 1s ease; }
 .hero-play-btn:hover, .hero-play-btn:focus { transform: translate(0, -15px); -webkit-transform: translate(0, -15px); -o-transform: translate(0, -15px); -moz-transform: translate(0, -15px); }
 .video-container {
-    top: 0;}
+    overflow: hidden;}
 .video-container video {
-    position: absolute;
-    transform: translate(0%, 0%);
-    width: auto;
-    height: 100vh;
-    object-fit: cover;}
+    width: auto;}
 .cookie-banner {
     position: fixed;
     bottom: 20px;
