@@ -193,6 +193,7 @@ Headings
 .modal-content h1 { font-size: 30px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
 .modal-content h2 { color: #253326; font-size: 15px; margin: 20px 0 20px 0; text-transform: uppercase; }
 
+/*
 /* ==========================================================================
 Custom Styles
 ========================================================================== */
@@ -379,9 +380,6 @@ footer p { color: #d1d9d2; line-height: 30px; }
 .footer-nav a { display: block; color: #d1d9d2; padding: 5px; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; }
 .footer-nav li a { display: block; color: #d1d9d2; padding: 5px; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; text-align: right; }
 .footer-nav li a:hover, .footer-nav li a:focus { text-decoration: none; color: #b6b2a4; }
-
-
-/* Main Modal */
 .modal {
     display: none;
     position: fixed;
@@ -390,8 +388,7 @@ footer p { color: #d1d9d2; line-height: 30px; }
     top: 50%;
     transform: translate(-50%, -50%);
     background: none; /* No background here, only the modal-content will define the popup's visual style */
-    align-items: center;
-  }
+    align-items: center;}
   .modal-content {
     background-color: #fff;
     padding: 20px;
@@ -399,19 +396,17 @@ footer p { color: #d1d9d2; line-height: 30px; }
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     width: 75%;
-    max-width: none;
-  }
+    max-width: none;}
   .close {
     color: #b6b2a4;
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
-  }
+    cursor: pointer;}
   .close:hover,
   .close:focus {
-    color: black;
-  }
+    color: black;}
+/*
 /* ==========================================================================
 Media Queries
 ========================================================================== */
@@ -424,6 +419,19 @@ Media Queries
     .about-me_2 p { font-size: 14px; margin: 40px 0px 40px 0; line-height: 20px; }
     .aboutme-btn { margin-bottom: 100px; }
 }
+/* Responsive adjustments (max: taller than wide, min: wider than tall*/
+@media (max-aspect-ratio: 16/9) {
+    .video-container video {
+      height: 100vh;
+      width: auto;
+    }
+  }
+@media (min-aspect-ratio: 16/9) {
+    .video-container video {
+      width: 100vw;
+      height: auto;
+    }
+  }
 /* ==========================================================================
 Animations
 ========================================================================== */
