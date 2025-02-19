@@ -193,7 +193,10 @@ Headings
 Custom Styles
 ========================================================================== */
 p { font-weight: 300; }
-.navigation { background-color: #253326; }
+.navigation { 
+    background-color: #253326; 
+    height: 10%;
+}
 .nav-last { margin-bottom: 50px; }
 nav ul { list-style: none; padding: 0; }
 nav ul li a { color: rgba(209, 217, 210, 0.6); padding: 20px; display: block; border-bottom: 1px dotted rgba(209, 217, 210, 0.2); transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; padding-left: 0; position: relative; }
@@ -203,10 +206,11 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .hero {
     position: relative;
     height: 50vh;
+    background-color: #253326; 
     overflow: hidden;}
   #hero-video {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -449,7 +453,7 @@ Media Queries
     }
     .updates-leftcol,
     .updates-rightcol {
-        width: 90%; /* Ensure the columns take up the full width */
+        width: 80%;
         padding: 0;  /* Remove side padding to prevent overflow */
         margin-bottom: 20px; /* Add space between the stacked columns */
         align-items: center;
