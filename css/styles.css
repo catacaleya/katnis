@@ -202,7 +202,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .pull { display: none; }
 .hero {
     position: relative;
-    height: 100vh;
+    height: 50vh;
     overflow: hidden;}
   #hero-video {
     position: absolute;
@@ -407,12 +407,12 @@ Media Queries
 ========================================================================== */
 @media only screen and (max-width: 900px) {
     .about-me { background: #b6b2a4; }
-    .about-me h1 { margin-top: 30px; font-size: 30px; font-weight: 80; }
-    .about-me p { font-size: 14px; margin: 40px 0px 40px 0; line-height: 20px; }
+    .about-me h1 { margin-top: 30px; font-size: 35px; font-weight: 100; }
+    .about-me p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 20px; }
     .portfolio { background: #253326; position: relative;}
-    .portfolio h1 { margin-top: 30px; font-size: 25px; }
-    .portfolio p { font-size: 14px; margin: 40px 0px 40px 0; line-height: 20px; }
-    .aboutme-btn { margin-bottom: 70px; font-size: 15px; }
+    .portfolio h1 { margin-top: 30px; font-size: 35px; }
+    .portfolio p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 25px; }
+    .aboutme-btn { margin-bottom: 40px; font-size: 15px; }
     .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; margin: 10px 0 0 70px; }
     #hero {
         position: relative;
@@ -436,6 +436,7 @@ Media Queries
         height: auto;
         width: 85%; 
         margin-bottom: 20px;
+        align-items: center;
     }
     .flat-box .title{ /* flat box titles*/
         font-size: 30px;
