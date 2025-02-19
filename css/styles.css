@@ -408,12 +408,15 @@ Media Queries
 @media only screen and (max-width: 900px) {
     .about-me { background: #b6b2a4; }
     .about-me h1 { margin-top: 30px; font-size: 35px; font-weight: 100; }
-    .about-me p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 20px; }
+    .about-me p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 22px; font-weight: 100; }
     .portfolio { background: #253326; position: relative;}
     .portfolio h1 { margin-top: 30px; font-size: 35px; }
     .portfolio p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 25px; }
+    .flat-box .flatbox-text {font-size: 20px; color: #253326; margin-bottom: 5px;}
     .aboutme-btn { margin-bottom: 40px; font-size: 15px; }
+    .updates h1 { color: #253326; font-size: 20px; margin: 50px 0 50px 0; text-transform: uppercase; }
     .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; margin: 10px 0 0 70px; }
+    .hero h2 { font-size: 90px; font-weight: 300; color: #b6b2a4; letter-spacing: -1px; margin: 10px 0 0 70px; }
     #hero {
         position: relative;
         /*height: 70vh;*/
@@ -445,9 +448,10 @@ Media Queries
     }
     .updates-leftcol,
     .updates-rightcol {
-        width: 100%; /* Ensure the columns take up the full width */
+        width: 90%; /* Ensure the columns take up the full width */
         padding: 0;  /* Remove side padding to prevent overflow */
         margin-bottom: 20px; /* Add space between the stacked columns */
+        align-items: center;
     }
     /* Optional: Remove border between the columns for small screens */
     .updates-leftcol {
