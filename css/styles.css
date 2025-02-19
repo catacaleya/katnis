@@ -415,7 +415,7 @@ Media Queries
     .aboutme-btn { margin-bottom: 70px; font-size: 15px; }
     .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; margin: 10px 0 0 70px; }
     #hero {
-        position: relative; /* Make sure the container is positioned */
+        position: relative;
         /*height: 70vh;*/
         display: flex;
         justify-content: center; /* Horizontally center */
@@ -426,14 +426,15 @@ Media Queries
         width: 100vw;
         transform: scale(2);
         transform-origin: center center;
-        align-items: flex-end; 
+        bottom: 0;
+        position: absolute;
         }
     .wp1 h1 {
         font-size: 2rem; /* Smaller font size for h1 on small screens */
       }
     .flat-box {
         height: auto;
-        width: 85vh; 
+        width: 85%; 
         margin-bottom: 20px;
     }
     .flat-box .title{ /* flat box titles*/
