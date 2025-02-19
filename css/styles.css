@@ -180,7 +180,7 @@ Clearfix
 Headings
 ========================================================================== */
 
-.hero h1 { font-size: 70px; font-weight: 500; color: #d1d9d2; letter-spacing: -1px; margin: 110px 0 20px 0; }
+.hero h1 { font-size: 70px; font-weight: 500; color: #d1d9d2; letter-spacing: -1px; margin: 110px 0 20px 20px; }
 .about-me h1 { font-size: 45px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
 .portfolio h1 { font-size: 45px; font-weight: 100; color: #d1d9d2; margin: 30px 0 30px 0; }
 .testimonials h1 { color: #d1d9d2; font-size: 43px; font-weight: 100; margin: 20px 0 80px 0; font-style: italic; }
@@ -407,33 +407,37 @@ Media Queries
 ========================================================================== */
 @media only screen and (max-width: 900px) {
     .about-me { background: #b6b2a4; }
-    .about-me h1 { margin-top: 30px; font-size: 25px; }
+    .about-me h1 { margin-top: 30px; font-size: 30px; font-weight: 80; }
     .about-me p { font-size: 14px; margin: 40px 0px 40px 0; line-height: 20px; }
-    .about-me_2 { background: #b6b2a4; }
-    .about-me_2 h1 { margin-top: 30px; font-size: 25px; }
-    .about-me_2 p { font-size: 14px; margin: 40px 0px 40px 0; line-height: 20px; }
-    .aboutme-btn { margin-bottom: 100px; font-size: 20px; }
+    .portfolio { background: #b6b2a4; }
+    .portfolio h1 { margin-top: 30px; font-size: 25px; }
+    .portfolio p { font-size: 14px; margin: 40px 0px 40px 0; line-height: 20px; }
+    .aboutme-btn { margin-bottom: 70px; font-size: 15px; }
+    .hero h1 { font-size: 50px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; margin: 110px 0 20px 20px; }
     #hero {
         position: relative; /* Make sure the container is positioned */
-        height: 70vh; /* Take up the full height of the viewport */
+        /*height: 70vh; /* Take up the full height of the viewport */
         display: flex;
         justify-content: center; /* Horizontally center */
-        align-items: center; /* Vertically center */
-        padding-top: 40px;
+        align-items: flex-end; /* Vertically center */
       }
     #hero-video {
         height: auto;
         width: 100vw;
         transform: scale(2);
         transform-origin: center center;
-        padding-top: 40px;}
+        }
+    .wp1 h1 {
+        font-size: 2rem; /* Smaller font size for h1 on small screens */
+      }
+        
+    }
     .updates-leftcol,
     .updates-rightcol {
         width: 100%; /* Ensure the columns take up the full width */
         padding: 0;  /* Remove side padding to prevent overflow */
         margin-bottom: 20px; /* Add space between the stacked columns */
     }
-    
     /* Optional: Remove border between the columns for small screens */
     .updates-leftcol {
         border-right: none;
