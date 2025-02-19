@@ -195,7 +195,7 @@ Custom Styles
 p { font-weight: 300; }
 .navigation { 
     background-color: #253326; 
-    height: 10%;
+    /*height: 10%;*/
 }
 .nav-last { margin-bottom: 50px; }
 nav ul { list-style: none; padding: 0; }
@@ -434,7 +434,7 @@ Media Queries
         width: 100vw;
         transform: scale(2);
         transform-origin: center center;
-        bottom: 0;
+        top: 10%;
         position: absolute;
         }
     .wp1 h1 {
@@ -442,7 +442,7 @@ Media Queries
       }
     .flat-box {
         height: auto;
-        width: 85%; 
+        width: 90%; 
         margin-bottom: 20px;
         margin: 0 auto 20px auto;
     }
@@ -456,7 +456,8 @@ Media Queries
         width: 80%;
         padding: 0;  /* Remove side padding to prevent overflow */
         margin-bottom: 20px; /* Add space between the stacked columns */
-        align-items: center;
+        margin: 0 auto 20px auto;
+        display: block;
     }
     /* Optional: Remove border between the columns for small screens */
     .updates-leftcol {
