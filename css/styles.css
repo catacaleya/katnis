@@ -206,7 +206,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .hero {
     position: relative;
     height: 50vh;
-    background-color: #253326; 
+    background-color: #000000; 
     overflow: hidden;}
   #hero-video {
     position: absolute;
