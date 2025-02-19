@@ -407,16 +407,17 @@ Media Queries
 ========================================================================== */
 @media only screen and (max-width: 900px) {
     .about-me { background: #b6b2a4; }
-    .about-me h1 { margin-top: 30px; font-size: 35px; font-weight: 100; }
-    .about-me p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 22px; font-weight: 100; }
+    .about-me h1 { margin-top: 40px; font-size: 35px; font-weight: 100; }
+    .about-me p { font-size: 20px; margin: 50px 0px 40px 0; line-height: 22px; font-weight: 100; }
     .portfolio { background: #253326; position: relative;}
-    .portfolio h1 { margin-top: 30px; font-size: 35px; }
+    .portfolio h1 { margin-top: 20px; font-size: 35px; }
     .portfolio p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 25px; }
     .flat-box .flatbox-text {font-size: 20px; color: #253326; margin-bottom: 5px;}
-    .aboutme-btn { margin-bottom: 40px; font-size: 15px; }
+    .aboutme-btn { margin-bottom: 35px; font-size: 15px; }
     .updates h1 { color: #253326; font-size: 20px; margin: 50px 0 50px 0; text-transform: uppercase; }
+    .scroll-indicator .arrow {width: 20px; height: 20px;} /* Maintain a square aspect ratio */
     .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; margin: 10px 0 0 70px; }
-    .hero h2 { font-size: 90px; font-weight: 300; color: #b6b2a4; letter-spacing: -1px; margin: 10px 0 0 70px; }
+    .hero h2 { font-size: 80px; font-weight: 300; color: #b6b2a4; letter-spacing: -1px; margin: 10px 0 0 70px; }
     #hero {
         position: relative;
         /*height: 70vh;*/
@@ -439,7 +440,7 @@ Media Queries
         height: auto;
         width: 85%; 
         margin-bottom: 20px;
-        align-items: center;
+        margin: 0 auto 20px auto;
     }
     .flat-box .title{ /* flat box titles*/
         font-size: 30px;
