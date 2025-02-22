@@ -206,9 +206,9 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .hero {
     position: relative;
     height: 100vh;
-    /*background-color: #000000; */
+    background-color: #000000;
     overflow: hidden;
-    z-index: 0;}
+    z-index: -1;}
 #hero-video {
     position: absolute;
     top: 0;
@@ -419,9 +419,10 @@ Media Queries
     .portfolio p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 25px; }
     .flat-box .flatbox-text {font-size: 20px; color: #253326; margin-bottom: 5px;}
     .aboutme-btn { margin-bottom: 35px; font-size: 15px; }
+    .logo {width: 60px; top: 10px; right: 20px;}
     .updates h1 { color: #253326; font-size: 20px; margin: 50px 0 50px 0; text-transform: uppercase; }
     .scroll-indicator .arrow {width: 20px; height: 20px;} /* Maintain a square aspect ratio */
-    .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; margin: 10px 0 0 70px; }
+    .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; top: 30vh; left: 70vw;}
     .hero h2 { font-size: 80px; font-weight: 300; color: #b6b2a4; letter-spacing: -1px; margin: 10px 0 0 70px; }
     #hero {
         position: relative;
