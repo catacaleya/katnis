@@ -434,8 +434,9 @@ Media Queries
         width: 100vw;
         transform: scale(2);
         transform-origin: center center;
-        top: 10%;
-        position: absolute;
+        /*top: 10%;*/
+        /*position: absolute;*/
+        align-items: flex-end;
         }
     .wp1 h1 {
         font-size: 2rem; /* Smaller font size for h1 on small screens */
