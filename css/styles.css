@@ -223,7 +223,9 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     font-weight: bold;}
 .container {
         position: relative;
-        z-index: 2;}
+        z-index: 2;
+        overflow-x: hidden;  /*prevent horizontal scrolling.*/
+        }
 .hero p { color: #d1d9d2; font-style: italic; font-size: 17px; }
 .hero a { color: #d1d9d2; }
 .hero-play-btn { height: 99px; 
@@ -322,8 +324,22 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .testimonials { background: #0d0d0d url('../img/spine_drawing.jpg') no-repeat left center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 130px 0; }
 .features { background: #d1d9d2 url('../img/arrowBG.png') no-repeat center -1px; padding: 70px 0; }
 .features p { color: #0d0d0d; font-size: 16px; word-spacing: 2px; line-height: 30px; }
-.updates-leftcol { border-right: 1px solid rgba(169, 174, 176, 0.4); padding-right: 0px; align-items: center; display: flex;}
-.updates-rightcol { padding-left: 0px; align-items: center; display: flex;}
+.updates-leftcol { 
+    width: 100%;
+    border-right: 1px solid rgba(169, 174, 176, 0.4); 
+    padding-right: 0px; 
+    align-items: center; 
+    display: flex;}
+.updates-rightcol {
+    width: 100%; 
+    padding-left: 0px; 
+    align-items: center; 
+    display: flex;}
+.updates-leftcol iframe,
+.updates-rightcol iframe {
+    width: 100%;
+    height: auto;
+}
 .margin-bottom { margin-bottom: 70px; }
 .try-btn { background-color: #0d0d0d; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; color: #d1d9d2; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; display: inline-block; padding: 15px 50px; margin: 70px 0 70px; }
 .try-btn:hover, .try-btn:focus { background-color: #253326; color: #d1d9d2; text-decoration: none; }
@@ -461,11 +477,6 @@ Media Queries
         margin-bottom: 20px; /* Add space between the stacked columns */
         margin: 0 auto 20px auto;
         display: block;
-        align-items: center;
-    }
-    /* Optional: Remove border between the columns for small screens */
-    .updates-leftcol {
-        border-right: none;
         align-items: center;
     }
     
