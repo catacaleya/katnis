@@ -184,7 +184,7 @@ Headings
 .about-me h1 { font-size: 45px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
 .portfolio h1 { font-size: 45px; font-weight: 100; color: #d1d9d2; margin: 30px 0 30px 0; }
 .testimonials h1 { color: #d1d9d2; font-size: 43px; font-weight: 100; margin: 20px 0 80px 0; font-style: italic; }
-.updates h1 { color: #253326; font-size: 15px; margin: 50px 0 50px 0; text-transform: uppercase; }
+.latest-updates h1 { color: #253326; font-size: 15px; margin: 50px 0 50px 0; text-transform: uppercase; }
 .modal-content h1 { font-size: 30px; font-weight: 100; color: #253326; margin: 100px 0 20px 0; }
 .modal-content h2 { color: #253326; font-size: 15px; margin: 20px 0 20px 0; text-transform: uppercase; }
 
@@ -278,37 +278,42 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     width: 100px; 
     height: auto; /* Maintain aspect ratio */
     z-index: 100; /* Ensure it appears above other elements */}
-.scroll-indicator { /* General container for the scroll indicator arrows */
-    /* Visibility delay */
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease;
-    /* General Appearance */
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;}
-  .hidden {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;}
-  .scroll-indicator .arrow {
-    width: 40px; /* Increased size for larger arrows */
-    height: 40px; /* Maintain a square aspect ratio */
-    border: solid #b6b2a4; /* Updated color */
-    border-width: 0 6px 6px 0; /* Adjust thickness for visibility */
-    display: inline-block;
-    padding: 10px; /* Larger padding to enhance size */
-    /*transform: rotate(45deg);*/
-    animation: bounce 1.5s infinite ease-in-out;}
-  .scroll-indicator .arrow:nth-child(2) {
-    margin-top: -10px; /* Adjust spacing between arrows */
-    animation-delay: 0.2s; /* Slight delay for staggered effect */}
-  .scroll-indicator .arrow:nth-child(3) {
-    animation-delay: 0.4s; /* Further delay for smooth sequence */}
+
+/* General Scroll Indicator Styling */
+.scroll-indicator-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease;
+  animation: bounce 1.5s infinite;
+}
+/* Hidden class for scroll indicator */
+.scroll-indicator-container.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+/* Arrow Styling */
+.scroll-indicator-arrow {
+  width: 20px;
+  height: 20px;
+  border: solid #b6b2a4; /* Arrow color */
+  border-width: 0 4px 4px 0; /* Arrow shape */
+  display: inline-block;
+  margin: 5px 0;
+  transform: rotate(45deg);
+}
+/* Staggered animation for the second arrow */
+.scroll-indicator-arrow:nth-child(2) {
+  margin-top: -10px; /* Adjust spacing */
+  animation-delay: 0.2s; /* Delay for staggered effect */
+}
 .about-me { background: #b6b2a4 url('../img/ImKati.jpg') no-repeat right 0px; 
     background-size: 30%; 
     height: 70vh;}
@@ -324,22 +329,36 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
 .testimonials { background: #0d0d0d url('../img/spine_drawing.jpg') no-repeat left center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 130px 0; }
 .features { background: #d1d9d2 url('../img/arrowBG.png') no-repeat center -1px; padding: 70px 0; }
 .features p { color: #0d0d0d; font-size: 16px; word-spacing: 2px; line-height: 30px; }
-.updates-leftcol { 
+.latest-updates {
+    padding: 20px 0;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #d1d9d2;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Posts Layout */
+  .post-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Iframe Styling */
+  .post-iframe {
+    transform: scale(0.9);
     width: 100%;
-    border-right: 1px solid rgba(169, 174, 176, 0.4); 
-    padding-right: 0px; 
-    align-items: center; 
-    display: flex;}
-.updates-rightcol {
-    width: 100%; 
-    padding-left: 0px; 
-    align-items: center; 
-    display: flex;}
-.updates-leftcol iframe,
-.updates-rightcol iframe {
-    width: 100%;
-    height: auto;
-}
+    height: 750px;
+    max-width: 580px;
+    border: none;
+    border-radius: 8px;
+  }
+
 .margin-bottom { margin-bottom: 70px; }
 .try-btn { background-color: #0d0d0d; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-size: 17px; color: #d1d9d2; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; display: inline-block; padding: 15px 50px; margin: 70px 0 70px; }
 .try-btn:hover, .try-btn:focus { background-color: #253326; color: #d1d9d2; text-decoration: none; }
@@ -435,26 +454,23 @@ Media Queries
     .portfolio p { font-size: 20px; margin: 40px 0px 40px 0; line-height: 25px; }
     .flat-box .flatbox-text {font-size: 20px; color: #253326; margin-bottom: 5px;}
     .aboutme-btn { margin-bottom: 35px; font-size: 15px; }
-    .logo {width: 60px; top: 10px; right: 20px;}
-    .updates h1 { color: #253326; font-size: 20px; margin: 50px 0 50px 0; text-transform: uppercase; }
-    .scroll-indicator .arrow {width: 20px; height: 20px;} /* Maintain a square aspect ratio */
-    .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; top: 30vh; left: 70vw;}
+    .logo {width: 70px; top: 10px; right: 20px;}
+    .latest-updates h1 { color: #253326; font-size: 20px; margin: 50px 0 50px 0; text-transform: uppercase; }
+    .scroll-indicator .arrow {width: 20px; height: 20px; z-index: 3;} /* Maintain a square aspect ratio */
+    .hero h1 { font-size: 70px; font-weight: 300; color: #d1d9d2; letter-spacing: -1px; position: relative; left: 25%;  width: calc(60vw - 20px);}
     .hero h2 { font-size: 80px; font-weight: 300; color: #b6b2a4; letter-spacing: -1px; margin: 10px 0 0 70px; }
     #hero {
         position: relative;
-        /*height: 70vh;*/
-        display: flex;
-        justify-content: center; /* Horizontally center */
-        align-items: flex-end; 
-      }
-    #hero-video {
-        height: auto;
+        height: 70vh;
+        overflow: hidden;
         width: 100vw;
-        transform: scale(2);
+    }
+    #hero-video {
+        position: absolute; /* fills the whole hero container */
+        width: 100vw;
+        bottom: 0;
         transform-origin: center center;
-        top: 10%;
-        /*position: absolute;*/
-        align-items: flex-end; /* new */
+        z-index: -1;
         }
     .wp1 h1 {
         font-size: 2rem; /* Smaller font size for h1 on small screens */
@@ -470,16 +486,7 @@ Media Queries
         font-weight: 400;
     }
     }
-    .updates-leftcol,
-    .updates-rightcol {
-        width: 80%;
-        padding: 0;  /* Remove side padding to prevent overflow */
-        margin-bottom: 20px; /* Add space between the stacked columns */
-        margin: 0 auto 20px auto;
-        display: block;
-        align-items: center;
-    }
-    
+
     /* Optional: Remove horizontal padding in the row to prevent overflow */
     .row {
         padding-left: 0;
@@ -499,21 +506,7 @@ Media Queries
 Animations
 ========================================================================== */
 .animated { -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
-.animated.infinite { -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
-.animated.hinge { -webkit-animation-duration: 2s; animation-duration: 2s; }
-@-webkit-keyframes bounceInDown {
-    0% { opacity: 0; -webkit-transform: translateY(-2000px); transform: translateY(-2000px); }
-    60% { opacity: 1; -webkit-transform: translateY(30px); transform: translateY(30px); }
-    80% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
-    100% { -webkit-transform: translateY(0); transform: translateY(0); }
-}
-@keyframes bounceInDown {
-    0% { opacity: 0; -webkit-transform: translateY(-2000px); -ms-transform: translateY(-2000px); transform: translateY(-2000px); }
-    60% { opacity: 1; -webkit-transform: translateY(30px); -ms-transform: translateY(30px); transform: translateY(30px); }
-    80% { -webkit-transform: translateY(-10px); -ms-transform: translateY(-10px); transform: translateY(-10px); }
-    100% { -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
-}
-.bounceInDown { -webkit-animation-name: bounceInDown; animation-name: bounceInDown; }
+.animated.infinite { -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite;}
 @-webkit-keyframes fadeInUpDelay {
     0% { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
     100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
@@ -554,11 +547,15 @@ Animations
     0% { opacity: 0; -webkit-transform: translateY(20px); -ms-transform: translateY(20px); transform: translateY(20px); }
     100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
 }
+/* Bounce Animation */
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(0deg);}
-    40% { transform: translateY(-10px) rotate(0deg);}
-    60% { transform: translateY(-5px) rotate(0deg);}  
-  }  
+    0%, 100% {
+      transform: translateY(0) rotate(45deg);
+    }
+    50% {
+      transform: translateY(10px) rotate(45deg);
+    }
+  }
 .fadeInUpD { -webkit-animation-name: fadeInUpD; animation-name: fadeInUpD; animation-delay: 0.5s; -webkit-animation-delay: 0.5s; }
 /* ==========================================================================
 Waypoints

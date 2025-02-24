@@ -80,31 +80,6 @@
           z-index: 1000;
       }
 
-      /* Scroll Indicator */
-      .scroll-indicator.hidden {
-          display: none;
-      }
-
-      .scroll-indicator {
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          animation: bounce 2s infinite;
-      }
-
-      .arrow {
-          width: 10px;
-          height: 10px;
-          border-right: 2px solid #fff;
-          border-bottom: 2px solid #fff;
-          transform: rotate(45deg);
-          margin: 5px 0;
-      }
-
       @keyframes bounce {
           0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
           40% { transform: translateX(-50%) translateY(-10px); }
@@ -149,10 +124,13 @@
           </div>
         </div>
       </div>
-      <div class="scroll-indicator hidden">
-        <div class="arrow arrow1"></div>
-        <div class="arrow arrow2"></div>
+
+      <div class="scroll-indicator-container hidden">
+        <div class="scroll-indicator-arrow"></div>
+        <div class="scroll-indicator-arrow"></div>
       </div>
+
+
       <div id="cookieConsentBanner" class="cookie-banner col-md-4 col-md-offset-6" style="display: none;">
         <p>
           🍪 Cookies are my way of saying: 'I see you, I know you, I respect your snack choices.' <br>
@@ -243,32 +221,36 @@
       </div>
     </section>
 
-    <!-- Rest of your sections... -->
-
-    <section class="updates" id="updates">
+    <!-- LinkedIn -->
+     
+    <section class="latest-updates" id="latest-updates">
       <div class="container">
-
+        <!-- Header Row -->
         <div class="row">
           <div class="col-md-12">
             <h1 class="typewriter" data-text="Get the latest Updates"></h1>
           </div>
         </div>
-
-        <div class="row"> <!-- row for the Posts -->
-          <div class="col-md-6 col-sm-12 wp2">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254856987870453763" height="940" width="490" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
+    
+        <!-- Posts Row -->
+        <div class="row">
+          <div class="col-12 col-md-6 post-column post-left">
+            <iframe class="post-iframe" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254856987870453763" frameborder="0" allowfullscreen="" title="LinkedIn Post 1"></iframe>
           </div>
-          <div class="col-md-6 col-sm-12 updates-rightcol wp3">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7246837381469786113" height="940" width="490" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
+          <div class="col-12 col-md-6 post-column post-right">
+            <iframe class="post-iframe" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7246837381469786113" frameborder="0" allowfullscreen="" title="LinkedIn Post 2"></iframe>
           </div>
         </div>
+    
+        <!-- Contact Row -->
         <div class="row">
-          <div class="col-md-12 text-center">
-           <a href="mailto:hello@katnis.de" class="try-btn">Get in Touch</a>
+          <div class="col-12 text-center">
+            <a href="mailto:hello@katnis.de" class="try-btn">Get in Touch</a>
           </div>
         </div>
       </div>
-    </section>      
+    </section>
+    
 
     <footer>
       <div class="container">
@@ -470,8 +452,8 @@
     <script> // Arrow appearance delay
     window.addEventListener('load', () => {
       setTimeout(() => {
-        document.querySelector('.scroll-indicator').classList.remove('hidden');
-      }, 3000); // Delay of 3 seconds
+        document.querySelector('.scroll-indicator-container').classList.remove('hidden');
+      }, 3000); // 3 seconds delay
     });
     </script>
     
