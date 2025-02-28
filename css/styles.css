@@ -207,8 +207,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     position: relative;
     height: 100vh;
     background-color: #000000;
-    overflow: hidden;
-    z-index: -1;}
+    overflow: hidden;}
 #hero-video {
     position: absolute;
     top: 0;
@@ -249,7 +248,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 3;
-    font-size: 10px;
+    font-size: 9px;
     display: none; /* Hidden until consent logic runs */
     max-width: 300px;
 }
@@ -293,6 +292,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
   visibility: visible;
   transition: opacity 0.5s ease;
   animation: bounce 1.5s infinite;
+  z-index: 3;
 }
 /* Hidden class for scroll indicator */
 .scroll-indicator-container.hidden {
@@ -309,6 +309,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
   display: inline-block;
   margin: 5px 0;
   transform: rotate(45deg);
+  z-index: 1000;
 }
 /* Staggered animation for the second arrow */
 .scroll-indicator-arrow:nth-child(2) {
