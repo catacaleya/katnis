@@ -227,7 +227,7 @@ nav ul li a:hover, nav ul li a:focus { color: rgba(209, 217, 210, 1); text-decor
         z-index: 2;
         overflow-x: hidden;  /*prevent horizontal scrolling.*/
         }
-.hero p { color: #d1d9d2; font-style: italic; font-size: 17px; }
+.hero p { color: #4d544e; font-style: italic; font-size: 17px; }
 .hero a { color: #d1d9d2; }
 .hero-play-btn { height: 99px; 
     width: 99px; 
