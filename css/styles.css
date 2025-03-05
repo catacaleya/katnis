@@ -472,7 +472,7 @@ Media Queries
         width: 100vw;
         bottom: 0;
         transform-origin: center center;
-        z-index: -1;
+        z-index: 1;
         }
     .wp1 h1 {
         font-size: 2rem; /* Smaller font size for h1 on small screens */
