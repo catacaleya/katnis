@@ -26,7 +26,6 @@ Base
 html { font-size: 85%; /* 1 */
     -webkit-text-size-adjust: 85%; /* 2 */
 -ms-text-size-adjust: 85%; /* 2 */ 
-    scroll-behavior: smooth;
   }
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
