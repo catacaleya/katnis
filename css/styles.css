@@ -25,7 +25,9 @@ Base
  
 html { font-size: 85%; /* 1 */
     -webkit-text-size-adjust: 85%; /* 2 */
--ms-text-size-adjust: 85%; /* 2 */ }
+-ms-text-size-adjust: 85%; /* 2 */ 
+    scroll-behavior: smooth;
+  }
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
 html, button, input, select, textarea { font-family: 'Lato', sans-serif; }
@@ -466,6 +468,7 @@ Media Queries
         height: 70vh;
         overflow: hidden;
         width: 100vw;
+        transition: height 0.3s ease;
     }
     #hero-video {
         position: absolute; /* fills the whole hero container */
